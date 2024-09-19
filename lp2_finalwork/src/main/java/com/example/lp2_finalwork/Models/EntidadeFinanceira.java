@@ -1,7 +1,5 @@
 package com.example.lp2_finalwork.Models;
 
-
-
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
