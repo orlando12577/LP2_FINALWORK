@@ -1,2 +1,2 @@
-INSERT INTO TIPOS_DIS (tipodiNome) VALUES ('Notebooks'), ('Monitores'), ('Hubs'), ('Switches'), ('Roteadores');
+INSERT INTO TIPOS_DI (TDI_NOME) VALUES ('Notebooks'), ('Monitores'),('Hubs'),('Switches'),('Roteadores');
 
