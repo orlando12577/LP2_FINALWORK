@@ -1,5 +1,6 @@
 package com.example.lp2_finalwork.Models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,27 +8,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TIPOS_DIS")
+@Table(name = "TIPOS_DI")
 public class TiposDi {
-    @Id
+	
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer tipodiId;
+	private Integer tdiId;
 	
-	private String tipodiNome;
-
-	public Integer getTipodiId() {
-		return tipodiId;
+	private String tdiNome;
+	public Integer getTdiId() {
+		return tdiId;
 	}
-    public void setTdiId(Integer tdiId) {
-		this.tipodiId = tdiId;
+	public void setTdiId(Integer tdiId) {
+		this.tdiId = tdiId;
 	}
-
-	public String getTipodiNome() {
-		return tipodiNome;
+	public String getTdiNome() {
+		return tdiNome;
 	}
-
 	public void setTdiNome(String tdiNome) {
-		this.tipodiNome = tipodiNome;
+		this.tdiNome = tdiNome;
 	}
-	
 }

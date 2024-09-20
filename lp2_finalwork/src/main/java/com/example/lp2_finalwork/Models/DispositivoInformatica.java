@@ -4,112 +4,127 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "DISPOSITIVOS_AUTOMATICO")
+@Table(name = "DISPOSITIVOS_INFORMATICA")
 public class DispositivoInformatica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int disId;
+    private int diId;
 
-    private String disEnderecoFisico;
-    private String disMarca;
-    private String disProcessador;
-    private String disTela;
-    private double disArmazenamento;
-    private double disMemoria;
-    private int disTensao;
-    private int disNumeroPortas;
+    private String diEnderecoFisico;
+    private String diMarca;
+    private String diProcessador;
+    private String diTela;
+    private double diArmazenamento;
+    private double diMemoria;
+    private int diTensao;
+    private int diNumeroPortas;
 
-    // Construtor vazio (necessário para o JPA)
-    public DispositivoInformatica() {}
+    @ManyToOne
+    @JoinColumn(name = "tipoDi")
+    private TiposDi tipoDi;
 
-    // Construtor com todos os atributos
-    public DispositivoInformatica(String disEnderecoFisico, String disMarca, String disProcessador, String disTela,
-                                  double disArmazenamento, double disMemoria, int disTensao, int disNumeroPortas) {
-        this.disEnderecoFisico = disEnderecoFisico;
-        this.disMarca = disMarca;
-        this.disProcessador = disProcessador;
-        this.disTela = disTela;
-        this.disArmazenamento = disArmazenamento;
-        this.disMemoria = disMemoria;
-        this.disTensao = disTensao;
-        this.disNumeroPortas = disNumeroPortas;
+    // Construtor padrão (necessário para JPA)
+    public DispositivoInformatica() {
+    }
+
+    // Construtor com todos os parâmetros
+    public DispositivoInformatica(String diEnderecoFisico, String diMarca, String diProcessador, String diTela,
+                                  double diArmazenamento, double diMemoria, int diTensao, int diNumeroPortas, TiposDi tipoDi) {
+        this.diEnderecoFisico = diEnderecoFisico;
+        this.diMarca = diMarca;
+        this.diProcessador = diProcessador;
+        this.diTela = diTela;
+        this.diArmazenamento = diArmazenamento;
+        this.diMemoria = diMemoria;
+        this.diTensao = diTensao;
+        this.diNumeroPortas = diNumeroPortas;
+        this.tipoDi = tipoDi;
     }
 
     // Getters e Setters
-    public int getDisId() {
-        return disId;
+    public int getDiId() {
+        return diId;
     }
 
-    public void setDisId(int disId) {
-        this.disId = disId;
+    public void setDiId(int diId) {
+        this.diId = diId;
     }
 
-    public String getDisEnderecoFisico() {
-        return disEnderecoFisico;
+    public String getDiEnderecoFisico() {
+        return diEnderecoFisico;
     }
 
-    public void setDisEnderecoFisico(String disEnderecoFisico) {
-        this.disEnderecoFisico = disEnderecoFisico;
+    public void setDiEnderecoFisico(String diEnderecoFisico) {
+        this.diEnderecoFisico = diEnderecoFisico;
     }
 
-    public String getDisMarca() {
-        return disMarca;
+    public String getDiMarca() {
+        return diMarca;
     }
 
-    public void setDisMarca(String disMarca) {
-        this.disMarca = disMarca;
+    public void setDiMarca(String diMarca) {
+        this.diMarca = diMarca;
     }
 
-    public String getDisProcessador() {
-        return disProcessador;
+    public String getDiProcessador() {
+        return diProcessador;
     }
 
-    public void setDisProcessador(String disProcessador) {
-        this.disProcessador = disProcessador;
+    public void setDiProcessador(String diProcessador) {
+        this.diProcessador = diProcessador;
     }
 
-    public String getDisTela() {
-        return disTela;
+    public String getDiTela() {
+        return diTela;
     }
 
-    public void setDisTela(String disTela) {
-        this.disTela = disTela;
+    public void setDiTela(String diTela) {
+        this.diTela = diTela;
     }
 
-    public double getDisArmazenamento() {
-        return disArmazenamento;
+    public double getDiArmazenamento() {
+        return diArmazenamento;
     }
 
-    public void setDisArmazenamento(double disArmazenamento) {
-        this.disArmazenamento = disArmazenamento;
+    public void setDiArmazenamento(double diArmazenamento) {
+        this.diArmazenamento = diArmazenamento;
     }
 
-    public double getDisMemoria() {
-        return disMemoria;
+    public double getDiMemoria() {
+        return diMemoria;
     }
 
-    public void setDisMemoria(double disMemoria) {
-        this.disMemoria = disMemoria;
+    public void setDiMemoria(double diMemoria) {
+        this.diMemoria = diMemoria;
     }
 
-    public int getDisTensao() {
-        return disTensao;
+    public int getDiTensao() {
+        return diTensao;
     }
 
-    public void setDisTensao(int disTensao) {
-        this.disTensao = disTensao;
+    public void setDiTensao(int diTensao) {
+        this.diTensao = diTensao;
     }
 
-    public int getDisNumeroPortas() {
-        return disNumeroPortas;
+    public int getDiNumeroPortas() {
+        return diNumeroPortas;
     }
 
-    public void setDisNumeroPortas(int disNumeroPortas) {
-        this.disNumeroPortas = disNumeroPortas;
+    public void setDiNumeroPortas(int diNumeroPortas) {
+        this.diNumeroPortas = diNumeroPortas;
+    }
+
+    public TiposDi getTipoDi() {
+        return tipoDi;
+    }
+
+    public void setTipoDi(TiposDi tipoDi) {
+        this.tipoDi = tipoDi;
     }
 }
-
