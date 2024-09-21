@@ -2,46 +2,97 @@ package com.example.lp2_finalwork.Services;
 
 
 
-import com.example.lp2_finalwork.Models.Leilao;
-import com.example.lp2_finalwork.Repository.LeilaoRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.lp2_finalwork.Models.EntidadeFinanceira;
+import com.example.lp2_finalwork.Models.Leilao;
+import com.example.lp2_finalwork.Repository.LeilaoRepository;
+import com.example.lp2_finalwork.Models.TiposDi;
+import com.example.lp2_finalwork.dtos.LeilaoDto;
+import com.example.lp2_finalwork.dtos.LeilaoForm;
+
+import com.example.lp2_finalwork.Repository.TiposDiRepository;
+
+import jakarta.persistence.EntityNotFoundException;
+
+
+
 import java.util.Optional;
 
 @Service
 public class LeilaoService {
-
-    @Autowired
-    private LeilaoRepository leilaoRepository;
-
-    // Método para salvar Leilao
-    public Leilao save(Leilao leilao) {
-        return leilaoRepository.save(leilao);
-    }
-
-    // Método para atualizar Leilao
-    public Leilao update(Leilao leilao) {
-        if (leilaoRepository.existsById(leilao.getLeilaoId())) {
-            return leilaoRepository.save(leilao);
-        }
-        throw new RuntimeException("Leilao não encontrado");
-    }
-
-    // Método para deletar Leilao pelo ID
-    public void delete(int leilaoId) {
-        leilaoRepository.deleteById(leilaoId);
-    }
-
-    // Método para encontrar Leilao pelo ID
-    public Optional<Leilao> findById(int leilaoId) {
-        return leilaoRepository.findById(leilaoId);
-    }
-
-    // Método para listar todos os Leilao
-    public List<Leilao> findAll() {
-        return leilaoRepository.findAll();
-    }
+	@Autowired
+	private LeilaoRepository leilaoRepository;
+	
+	
+	public ResponseEntity<List<LeilaoDto>> getAll(){
+		List<Leilao> leiloes= leilaoRepository.findAll();
+		
+		List<LeilaoDto> leiloesDtos = new ArrayList<LeilaoDto>();
+		
+		for (Leilao leilao : leiloes) {
+			leiloesDtos.add(converteParaDto(leilao));
+		}
+		return ResponseEntity.ok().body(leiloesDtos);
+	}
+	
+	public ResponseEntity<LeilaoDto> save(LeilaoForm leilaoForm) {
+		
+		
+		Leilao leilao = new Leilao(
+				leilaoForm.getLeiDataOcorrencia(),
+				leilaoForm.getLeiDataVisitacao(),
+				leilaoForm.getLeiEndereco(),
+				leilaoForm.getLeiCidade(),
+				leilaoForm.getLeiEstado(),
+				leilaoForm.getLeiEnderecoWeb()
+				);
+		
+		
+		return ResponseEntity.ok().body(converteParaDto(leilaoRepository.save(leilao)));
+	}
+	
+	public ResponseEntity<LeilaoDto>  update(LeilaoForm leilaoForm, Integer id) {
+		
+		Leilao leilao = leilaoRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Não encontrado registro de id: " + id + " na classe: " + Leilao.class.toString() ));                   
+		
+		
+		leilao.setLeiCidade(leilaoForm.getLeiCidade());
+		leilao.setLeiDataOcorrencia(leilaoForm.getLeiDataOcorrencia());
+		leilao.setLeiDataVisitacao(leilaoForm.getLeiDataVisitacao());
+		leilao.setLeiEndereco(leilaoForm.getLeiEndereco());
+		leilao.setLeiEnderecoWeb(leilaoForm.getLeiEnderecoWeb());
+		leilao.setLeiEstado(leilaoForm.getLeiEstado());
+		
+		return ResponseEntity.ok().body(converteParaDto(leilao));
+	}
+	
+	public void delete(Integer id) {
+		
+		leilaoRepository.deleteById(id);
+	}
+	
+	public ResponseEntity<LeilaoDto> getById(Integer id){
+		return ResponseEntity.ok().body(converteParaDto(leilaoRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Não encontrado registro de id: " + id + " na classe: " + Leilao.class.toString()))));
+	}
+	
+	public LeilaoDto converteParaDto(Leilao leilao) {
+		return new LeilaoDto(
+				leilao.getLeiId(),
+				leilao.getLeiDataOcorrencia(),
+				leilao.getLeiDataVisitacao(),
+				leilao.getLeiEndereco(),
+				leilao.getLeiCidade(),
+				leilao.getLeiEstado(),
+				leilao.getLeiEnderecoWeb()
+		);
+	}
 }

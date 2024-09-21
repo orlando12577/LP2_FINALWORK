@@ -1,6 +1,4 @@
 package com.example.lp2_finalwork.Models;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

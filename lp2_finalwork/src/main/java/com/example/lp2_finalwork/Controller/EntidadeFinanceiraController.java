@@ -16,42 +16,28 @@ public class EntidadeFinanceiraController {
     @Autowired
     private EntidadeFinanceiraService entidadeFinanceiraService;
 
-    // Endpoint para criar uma nova entidade financeira
-    @PostMapping("/create")
-    public ResponseEntity<EntidadeFinanceira> createEntidadeFinanceira(@RequestBody EntidadeFinanceira entidadeFinanceira) {
-        EntidadeFinanceira savedEntidadeFinanceira = entidadeFinanceiraService.save(entidadeFinanceira);
-        return ResponseEntity.ok(savedEntidadeFinanceira);
+    @PostMapping
+    public EntidadeFinanceira create(@RequestBody EntidadeFinanceira entidadeFinanceira) {
+        return entidadeFinanceiraService.save(entidadeFinanceira);
     }
 
-    // Endpoint para atualizar uma entidade financeira existente
-    @PutMapping("/update/{entidadefinId}")
-    public ResponseEntity<EntidadeFinanceira> updateEntidadeFinanceira(@PathVariable("entidadefinId") int entidadefinId, @RequestBody EntidadeFinanceira entidadeFinanceira) {
-        Optional<EntidadeFinanceira> optionalEntidadeFinanceira = entidadeFinanceiraService.findById(entidadefinId);
-        if (optionalEntidadeFinanceira.isPresent()) {
-            EntidadeFinanceira updatedEntidadeFinanceira = entidadeFinanceiraService.update(entidadeFinanceira);
-            return ResponseEntity.ok(updatedEntidadeFinanceira);
-        }
-        return ResponseEntity.notFound().build();
+    @PutMapping
+    public EntidadeFinanceira update(@RequestBody EntidadeFinanceira entidadeFinanceira) {
+        return entidadeFinanceiraService.update(entidadeFinanceira);
     }
 
-    // Endpoint para deletar uma entidade financeira por ID
-    @DeleteMapping("/delete/{entidadefinId}")
-    public ResponseEntity<Void> deleteEntidadeFinanceira(@PathVariable("entidadefinId") int entidadefinId) {
-        entidadeFinanceiraService.delete(entidadefinId);
-        return ResponseEntity.noContent().build();
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id) {
+        entidadeFinanceiraService.delete(id);
     }
 
-    // Endpoint para buscar uma entidade financeira por ID
-    @GetMapping("/find/{entidadefinId}")
-    public ResponseEntity<EntidadeFinanceira> findEntidadeFinanceiraById(@PathVariable("entidadefinId") int entidadefinId) {
-        Optional<EntidadeFinanceira> optionalEntidadeFinanceira = entidadeFinanceiraService.findById(entidadefinId);
-        return optionalEntidadeFinanceira.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    @GetMapping("/{id}")
+    public Optional<EntidadeFinanceira> findById(@PathVariable int id) {
+        return entidadeFinanceiraService.findById(id);
     }
 
-    // Endpoint para listar todas as entidades financeiras
-    @GetMapping("/findAll")
-    public ResponseEntity<List<EntidadeFinanceira>> findAllEntidadesFinanceiras() {
-        List<EntidadeFinanceira> entidadesFinanceiras = entidadeFinanceiraService.findAll();
-        return ResponseEntity.ok(entidadesFinanceiras);
+    @GetMapping
+    public List<EntidadeFinanceira> findAll() {
+        return entidadeFinanceiraService.findAll();
     }
 }
