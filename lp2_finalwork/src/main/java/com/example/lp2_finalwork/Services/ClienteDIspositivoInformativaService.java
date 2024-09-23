@@ -15,9 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class ClienteDIspositivoInformativaService {
@@ -52,7 +53,8 @@ public class ClienteDIspositivoInformativaService {
 		ClienteDispositivoInformatica clienteDispositivoInformatica = new ClienteDispositivoInformatica(
 				clienteDispositivoInformaticaForm.getValor(),
 				cliente,
-				dispositivoInformatica
+				dispositivoInformatica,
+				LocalDateTime.now()
 				);
 		
 		
@@ -90,7 +92,8 @@ public class ClienteDIspositivoInformativaService {
 				clienteDispositivoInformatica.getClidiValorLance(),
 				clienteDispositivoInformatica.getCliente().getCliNome(),
 				clienteDispositivoInformatica.getCliente().getCliCpf(),
-				clienteDispositivoInformatica.getDispositivoInformatica().getDiId()
+				clienteDispositivoInformatica.getDispositivoInformatica().getDiId(),
+				clienteDispositivoInformatica.getClidiDataHoraLance()
 		);
 	}
 }
