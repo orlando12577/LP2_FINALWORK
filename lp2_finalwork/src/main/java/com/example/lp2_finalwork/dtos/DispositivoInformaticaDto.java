@@ -1,26 +1,12 @@
 package com.example.lp2_finalwork.dtos;
 
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class DispositivoInformaticaDto {
     	
 	
-	public DispositivoInformaticaDto(Integer diId, String diEnderecoFisico, String diMarca, String diProcessador,
-			String diTela, Double diArmazenamento, Double diMemoria, Integer diTensao, Integer diNumeroPortas, String tipoDiNome, Date leilaoDataOcorrencia) {
-		super();
-		this.diId = diId;
-		this.diEnderecoFisico = diEnderecoFisico;
-		this.diMarca = diMarca;
-		this.diProcessador = diProcessador;
-		this.diTela = diTela;
-		this.diArmazenamento = diArmazenamento;
-		this.diMemoria = diMemoria;
-		this.diTensao = diTensao;
-		this.diNumeroPortas = diNumeroPortas;
-		this.tipoDiNome = tipoDiNome;
-		this.leilaoDataOcorrencia = leilaoDataOcorrencia;
-	}
 
 	private Integer diId;
 	
@@ -42,17 +28,31 @@ public class DispositivoInformaticaDto {
 	
 	private String tipoDiNome;
 	
-	private Date leilaoDataOcorrencia;
+	private LocalDateTime leilaoDataOcorrencia;
 	
-	
+	public DispositivoInformaticaDto(Integer diId, String diEnderecoFisico, String diMarca, String diProcessador,
+			String diTela, Double diArmazenamento, Double diMemoria, Integer diTensao, Integer diNumeroPortas, String tipoDiNome, LocalDateTime leilaoDataOcorrencia) {
+		super();
+		this.diId = diId;
+		this.diEnderecoFisico = diEnderecoFisico;
+		this.diMarca = diMarca;
+		this.diProcessador = diProcessador;
+		this.diTela = diTela;
+		this.diArmazenamento = diArmazenamento;
+		this.diMemoria = diMemoria;
+		this.diTensao = diTensao;
+		this.diNumeroPortas = diNumeroPortas;
+		this.tipoDiNome = tipoDiNome;
+		this.leilaoDataOcorrencia = leilaoDataOcorrencia;
+	}
 	
 	
 
-	public Date getLeilaoDataOcorrencia() {
+	public LocalDateTime getLeilaoDataOcorrencia() {
 		return leilaoDataOcorrencia;
 	}
 
-	public void setLeilaoDataOcorrencia(Date leilaoDataOcorrencia) {
+	public void setLeilaoDataOcorrencia(LocalDateTime leilaoDataOcorrencia) {
 		this.leilaoDataOcorrencia = leilaoDataOcorrencia;
 	}
 
@@ -139,4 +139,7 @@ public class DispositivoInformaticaDto {
 	public void setTipoDiNome(String tipoDiNome) {
 		this.tipoDiNome = tipoDiNome;
 	}
+
+	
+	
 }

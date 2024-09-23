@@ -34,11 +34,6 @@ public class DispositivoInformatica {
 	@JoinColumn(name = "leilao")
 	private Leilao leilao;
 
-  
-
-
-
-
     // Construtor padrão (necessário para JPA)
     public DispositivoInformatica() {
     }

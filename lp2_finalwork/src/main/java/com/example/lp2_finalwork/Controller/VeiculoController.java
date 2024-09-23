@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.lp2_finalwork.Models.Veiculo;
-import com.example.lp2_finalwork.Services.VeiculoService;
+import com.example.lp2_finalwork.Models.Veiculos;
+import com.example.lp2_finalwork.Services.VeiculosService;
+import com.example.lp2_finalwork.dtos.VeiculosDto;
+import com.example.lp2_finalwork.dtos.VeiculosForm;
+
 import java.util.List;
 
 @RestController
@@ -20,35 +23,33 @@ import java.util.List;
 public class VeiculoController {
 
     @Autowired
-    private VeiculoService veiculoService;
+    private VeiculosService veiculosService;
 
-    @PostMapping("/create")
-    public ResponseEntity<Veiculo> createVeiculo(@RequestBody Veiculo veiculo) {
-        return ResponseEntity.ok(veiculoService.save(veiculo));
+    @GetMapping
+    //Todos as Informaçãoes do Veiculos
+    public ResponseEntity<List<VeiculosDto>> getAll() {
+
+        return veiculosService.getAll();
+
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Veiculo> updateVeiculo(@PathVariable("id") int id, @RequestBody Veiculo veiculo) {
-        return veiculoService.findById(id)
-                .map(v -> ResponseEntity.ok(veiculoService.update(veiculo)))
-                .orElse(ResponseEntity.notFound().build());
+    @PostMapping
+    public ResponseEntity<VeiculosDto> save(@RequestBody VeiculosForm veiculosForm) {
+        return veiculosService.save(veiculosForm);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteVeiculo(@PathVariable("id") int id) {
-        veiculoService.delete(id);
-        return ResponseEntity.noContent().build();
+    @PutMapping("/{id}")
+    public ResponseEntity<VeiculosDto> update(@RequestBody VeiculosForm veiculosForm, @PathVariable Integer id) {
+        return veiculosService.update(veiculosForm,id);
     }
 
-    @GetMapping("/find/{id}")
-    public ResponseEntity<Veiculo> findVeiculoById(@PathVariable("id") int id) {
-        return veiculoService.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        veiculosService.delete(id);
     }
 
-    @GetMapping("/findAll")
-    public ResponseEntity<List<Veiculo>> findAllVeiculos() {
-        return ResponseEntity.ok(veiculoService.findAll());
+    @GetMapping("/{id}")
+    public ResponseEntity<VeiculosDto> getById(@PathVariable Integer id) {
+        return veiculosService.getById(id);
     }
 }

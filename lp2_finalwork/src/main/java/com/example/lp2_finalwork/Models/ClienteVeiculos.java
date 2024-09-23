@@ -20,7 +20,7 @@ public class ClienteVeiculos {
 	
 	@ManyToOne
 	@JoinColumn(name = "veiculo")
-	private Veiculo veiculo;
+	private Veiculos veiculo;
 	
 	@ManyToOne
 	@JoinColumn(name = "cliente")
@@ -35,7 +35,7 @@ public class ClienteVeiculos {
 	
 	
 
-	public ClienteVeiculos(Veiculo veiculo, Cliente cliente, Double cliveiValorLance, LocalDateTime clidiDataHoraLance) {
+	public ClienteVeiculos(Veiculos veiculo, Cliente cliente, Double cliveiValorLance, LocalDateTime clidiDataHoraLance) {
 		super();
 		this.veiculo = veiculo;
 		this.cliente = cliente;
@@ -65,11 +65,11 @@ public class ClienteVeiculos {
 		this.cliveiId = cliveiId;
 	}
 
-	public Veiculo getVeiculo() {
+	public Veiculos getVeiculo() {
 		return veiculo;
 	}
 
-	public void setVeiculo(Veiculo veiculo) {
+	public void setVeiculo(Veiculos veiculo) {
 		this.veiculo = veiculo;
 	}
 

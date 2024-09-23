@@ -3,10 +3,10 @@ package com.example.lp2_finalwork.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.lp2_finalwork.Models.Veiculo;
+import com.example.lp2_finalwork.Models.Veiculos;
 
 
 @Repository
-public interface VeiculosRepository extends JpaRepository <Veiculo, Integer> {
+public interface VeiculosRepository extends JpaRepository <Veiculos, Integer> {
     
 }
