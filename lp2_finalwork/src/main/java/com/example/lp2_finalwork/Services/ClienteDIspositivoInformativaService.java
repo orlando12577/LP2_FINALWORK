@@ -1,44 +1,96 @@
 package com.example.lp2_finalwork.Services;
 
+import com.example.lp2_finalwork.Models.Cliente;
 import com.example.lp2_finalwork.Models.ClienteDispositivoInformatica;
+import com.example.lp2_finalwork.Models.DispositivoInformatica;
 import com.example.lp2_finalwork.Repository.ClienteDispositivoInformaticaRepository;
+import com.example.lp2_finalwork.Repository.ClienteRepository;
+import com.example.lp2_finalwork.Repository.DispositivosInformaticaRepository;
+import com.example.lp2_finalwork.dtos.ClienteDispositivoInformaticaDto;
+import com.example.lp2_finalwork.dtos.ClienteDispositivoInformaticaForm;
+
+import jakarta.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class ClienteDIspositivoInformativaService {
+@Autowired
+	private ClienteDispositivoInformaticaRepository clienteDispositivosInformaticaRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private DispositivosInformaticaRepository dispositivosInformaticaRepository;
+	
 
-    @Autowired
-    private ClienteDispositivoInformaticaRepository clienteDispositivoInformaticaRepository;
+	
+	public ResponseEntity<List<ClienteDispositivoInformaticaDto>> getAll(){
+		List<ClienteDispositivoInformatica> cliDispositivoInformaticas = clienteDispositivosInformaticaRepository.findAll();
+		
+		List<ClienteDispositivoInformaticaDto> clientesdispositivoInformaticaDtos = new ArrayList<ClienteDispositivoInformaticaDto>();
+		
+		for (ClienteDispositivoInformatica clienteDispositivoInformatica : cliDispositivoInformaticas) {
+			clientesdispositivoInformaticaDtos.add(converteParaDto(clienteDispositivoInformatica));
+		}
+		return ResponseEntity.ok().body(clientesdispositivoInformaticaDtos);
+	}
+	
+	public ResponseEntity<ClienteDispositivoInformaticaDto> save(ClienteDispositivoInformaticaForm clienteDispositivoInformaticaForm) {
+		
+		Cliente cliente = clienteRepository.findBycliCpf(clienteDispositivoInformaticaForm.getCpfCliente());
+		
+		DispositivoInformatica dispositivoInformatica = dispositivosInformaticaRepository.findById(clienteDispositivoInformaticaForm.getDispositivoInformatica()).orElseThrow(() -> new EntityNotFoundException("Não encontrado registro de id: " + clienteDispositivoInformaticaForm.getDispositivoInformatica() + " na classe: " + DispositivoInformatica.class.toString() ));
 
-    // Método para salvar ClienteDispositivoInformatica
-    public ClienteDispositivoInformatica save(ClienteDispositivoInformatica clienteDispositivoInformatica) {
-        return clienteDispositivoInformaticaRepository.save(clienteDispositivoInformatica);
-    }
+		ClienteDispositivoInformatica clienteDispositivoInformatica = new ClienteDispositivoInformatica(
+				clienteDispositivoInformaticaForm.getValor(),
+				cliente,
+				dispositivoInformatica
+				);
+		
+		
+		return ResponseEntity.ok().body(converteParaDto(clienteDispositivosInformaticaRepository.save(clienteDispositivoInformatica)));
+	}
+	
+	public ResponseEntity<ClienteDispositivoInformaticaDto>  update(ClienteDispositivoInformaticaForm clienteDispositivoInformaticaForm, Integer id) {
+		
+		ClienteDispositivoInformatica clienteDispositivoInformatica = clienteDispositivosInformaticaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Não encontrado registro de id: " + id + " na classe: " + ClienteDispositivoInformatica.class.toString() ));                   
+		
+		Cliente cliente = clienteRepository.findBycliCpf(clienteDispositivoInformaticaForm.getCpfCliente());
+		
+		DispositivoInformatica dispositivoInformatica = dispositivosInformaticaRepository.findById(clienteDispositivoInformaticaForm.getDispositivoInformatica()).orElseThrow(() -> new EntityNotFoundException("Não encontrado registro de id: " + clienteDispositivoInformaticaForm.getDispositivoInformatica() + " na classe: " + DispositivoInformatica.class.toString() ));
 
-    // Método para atualizar ClienteDispositivoInformatica
-    public ClienteDispositivoInformatica update(ClienteDispositivoInformatica clienteDispositivoInformatica) {
-        if (clienteDispositivoInformaticaRepository.existsById(clienteDispositivoInformatica.getClidiId())) {
-            return clienteDispositivoInformaticaRepository.save(clienteDispositivoInformatica);
-        }
-        throw new RuntimeException("ClienteDispositivoInformatica não encontrado");
-    }
-
-    // Método para deletar ClienteDispositivoInformatica pelo ID
-    public void delete(int clienteDispositivoId) {
-        clienteDispositivoInformaticaRepository.deleteById(clienteDispositivoId);
-    }
-
-    // Método para encontrar ClienteDispositivoInformatica pelo ID
-    public Optional<ClienteDispositivoInformatica> findById(int clienteDispositivoId) {
-        return clienteDispositivoInformaticaRepository.findById(clienteDispositivoId);
-    }
-
-    // Método para listar todos os ClienteDispositivoInformatica
-    public List<ClienteDispositivoInformatica> findAll() {
-        return clienteDispositivoInformaticaRepository.findAll();
-    }
+		clienteDispositivoInformatica.setClidiValorLance(clienteDispositivoInformaticaForm.getValor());
+		clienteDispositivoInformatica.setCliente(cliente);
+		clienteDispositivoInformatica.setDispositivoInformatica(dispositivoInformatica);
+		
+		
+		return ResponseEntity.ok().body(converteParaDto(clienteDispositivosInformaticaRepository.save(clienteDispositivoInformatica)));
+	}
+	
+	public void delete(Integer id) {
+		
+		clienteDispositivosInformaticaRepository.deleteById(id);
+	}
+	
+	public ResponseEntity<ClienteDispositivoInformaticaDto> getById(Integer id){
+		return ResponseEntity.ok().body(converteParaDto(clienteDispositivosInformaticaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Não encontrado registro de id: " + id + " na classe: " + ClienteDispositivoInformatica.class.toString()))));
+	}
+	
+	public ClienteDispositivoInformaticaDto converteParaDto(ClienteDispositivoInformatica clienteDispositivoInformatica) {
+		return new ClienteDispositivoInformaticaDto(
+				clienteDispositivoInformatica.getClidiId(),
+				clienteDispositivoInformatica.getClidiValorLance(),
+				clienteDispositivoInformatica.getCliente().getCliNome(),
+				clienteDispositivoInformatica.getCliente().getCliCpf(),
+				clienteDispositivoInformatica.getDispositivoInformatica().getDiId()
+		);
+	}
 }
