@@ -10,10 +10,13 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "VEICULOS")
-public class Veiculo {
+public class Veiculos {
 
 
-	public Veiculo(String veiPlaca, String veiMarca, Integer veiAnoFabricacao, Double veiDistanciaRodada,
+    public Veiculos() {
+    }
+
+	public Veiculos(String veiPlaca, String veiMarca, Integer veiAnoFabricacao, Double veiDistanciaRodada,
 			String veiCambio, String veiCombustivel, String veiCor, Double veiPeso, TiposVeiculos tipoVeiculo,
 			Leilao leilao) {
 		super();
