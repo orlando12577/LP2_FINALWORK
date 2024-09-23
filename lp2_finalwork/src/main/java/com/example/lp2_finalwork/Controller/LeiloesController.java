@@ -25,12 +25,17 @@ import java.util.List;
 @CrossOrigin(origins="*")
 public class LeiloesController {
 
-	@Autowired
 	private LeilaoService leilaoService;
 	
 	@GetMapping
 	public ResponseEntity<List<LeilaoDto>> getAll() {
+
 		return leilaoService.getAll();
+	}
+	
+	@GetMapping(value = "/dataOcorrencia")
+	public ResponseEntity<List<LeilaoDto>> getAllOrderByDataOcorrencia(){
+		return leilaoService.getAllOrderByDataOcorrencia();
 	}
 	
 	@PostMapping
