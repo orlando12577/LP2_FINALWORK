@@ -19,7 +19,7 @@ public class EntidadeFinanceiraService {
     }
 
     public EntidadeFinanceira update(EntidadeFinanceira entidadeFinanceira) {
-        if (entidadeFinanceiraRepository.existsById(entidadeFinanceira.getEntidadefinId())) {
+        if (entidadeFinanceiraRepository.existsById(entidadeFinanceira.getEntfinId())) {
             return entidadeFinanceiraRepository.save(entidadeFinanceira);
         }
         throw new RuntimeException("Entidade financeira não encontrada");

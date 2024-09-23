@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,5 +22,12 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
 		
 		DefaultError erro = new DefaultError(HttpStatus.NOT_FOUND.value(), e.getMessage());
 		return new ResponseEntity<DefaultError>(erro, HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(DataIntegrityViolationException.class)
+	public ResponseEntity<DefaultError> violacaoIntegridade(DataIntegrityViolationException e, HttpServletRequest request) {
+		
+		DefaultError erro = new DefaultError(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
+		return new ResponseEntity<DefaultError>(erro, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

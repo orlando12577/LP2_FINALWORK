@@ -6,26 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.example.lp2_finalwork.Models.EntidadeFinanceira;
+
 import com.example.lp2_finalwork.Models.Leilao;
 import com.example.lp2_finalwork.Repository.LeilaoRepository;
-import com.example.lp2_finalwork.Models.TiposDi;
 import com.example.lp2_finalwork.dtos.LeilaoDto;
 import com.example.lp2_finalwork.dtos.LeilaoForm;
 
-import com.example.lp2_finalwork.Repository.TiposDiRepository;
+
 
 import jakarta.persistence.EntityNotFoundException;
-
-
-
-import java.util.Optional;
 
 @Service
 public class LeilaoService {

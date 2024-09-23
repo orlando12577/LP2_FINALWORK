@@ -1,62 +1,68 @@
 package com.example.lp2_finalwork.dtos;
+import java.util.Date;
 
-import java.time.LocalDateTime;
 
 public class LeilaoForm {
-    private LocalDateTime leiDataOcorrencia;
-    private LocalDateTime leiDataVisitacao;
-    private String leiEndereco;
-    private String leiCidade;
-    private String leiEstado; // Assegure-se de que isso existe
-    private String leiEnderecoWeb;
+   
+	private Date leiDataOcorrencia;
+	
+	private Date leiDataVisitacao;
+	
+	private String leiEndereco;
+	
+	private String leiCidade;
+	
+	private String leiestado;
+	
+	private String leiEnderecoWeb;
 
-    // Getters e Setters
-    public LocalDateTime getLeiDataOcorrencia() {
-        return leiDataOcorrencia;
-    }
+	public Date getLeiDataOcorrencia() {
+		return leiDataOcorrencia;
+	}
 
-    public void setLeiDataOcorrencia(LocalDateTime leiDataOcorrencia) {
-        this.leiDataOcorrencia = leiDataOcorrencia;
-    }
+	public void setLeiDataOcorrencia(Date leiDataOcorrencia) {
+		this.leiDataOcorrencia = leiDataOcorrencia;
+	}
 
-    public LocalDateTime getLeiDataVisitacao() {
-        return leiDataVisitacao;
-    }
+	public Date getLeiDataVisitacao() {
+		return leiDataVisitacao;
+	}
 
-    public void setLeiDataVisitacao(LocalDateTime leiDataVisitacao) {
-        this.leiDataVisitacao = leiDataVisitacao;
-    }
+	public void setLeiDataVisitacao(Date leiDataVisitacao) {
+		this.leiDataVisitacao = leiDataVisitacao;
+	}
 
-    public String getLeiEndereco() {
-        return leiEndereco;
-    }
+	public String getLeiEndereco() {
+		return leiEndereco;
+	}
 
-    public void setLeiEndereco(String leiEndereco) {
-        this.leiEndereco = leiEndereco;
-    }
+	public void setLeiEndereco(String leiEndereco) {
+		this.leiEndereco = leiEndereco;
+	}
 
-    public String getLeiCidade() {
-        return leiCidade;
-    }
+	public String getLeiCidade() {
+		return leiCidade;
+	}
 
-    public void setLeiCidade(String leiCidade) {
-        this.leiCidade = leiCidade;
-    }
+	public void setLeiCidade(String leiCidade) {
+		this.leiCidade = leiCidade;
+	}
 
-    public String getLeiEstado() {
-        return leiEstado; // Adicione este método
-    }
+	public String getLeiestado() {
+		return leiestado;
+	}
 
-    public void setLeiEstado(String leiEstado) {
-        this.leiEstado = leiEstado; // Adicione este método
-    }
+	public void setLeiestado(String leiestado) {
+		this.leiestado = leiestado;
+	}
 
-    public String getLeiEnderecoWeb() {
-        return leiEnderecoWeb;
-    }
+	public String getLeiEnderecoWeb() {
+		return leiEnderecoWeb;
+	}
 
-    public void setLeiEnderecoWeb(String leiEnderecoWeb) {
-        this.leiEnderecoWeb = leiEnderecoWeb;
-    }
+	public void setLeiEnderecoWeb(String leiEnderecoWeb) {
+		this.leiEnderecoWeb = leiEnderecoWeb;
+	}
+	
+	
 }
-

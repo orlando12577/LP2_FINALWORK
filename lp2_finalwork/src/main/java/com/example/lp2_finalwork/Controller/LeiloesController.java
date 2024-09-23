@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.lp2_finalwork.Models.Leilao;
+
 import com.example.lp2_finalwork.Services.LeilaoService;
 import com.example.lp2_finalwork.dtos.LeilaoDto;
 import com.example.lp2_finalwork.dtos.LeilaoForm;
@@ -25,13 +25,11 @@ import java.util.List;
 @CrossOrigin(origins="*")
 public class LeiloesController {
 
-   	
 	@Autowired
 	private LeilaoService leilaoService;
 	
 	@GetMapping
 	public ResponseEntity<List<LeilaoDto>> getAll() {
-
 		return leilaoService.getAll();
 	}
 	

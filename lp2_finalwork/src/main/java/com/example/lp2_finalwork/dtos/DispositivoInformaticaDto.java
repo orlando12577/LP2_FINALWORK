@@ -1,101 +1,142 @@
 package com.example.lp2_finalwork.dtos;
 
+
+import java.util.Date;
+
 public class DispositivoInformaticaDto {
     	
-   
-    public DispositivoInformaticaDto(Integer diId, String diEnderecoFisico, String diMarca, String diProcessador,
-    String diTela, double diArmazenamento, double diMemoria, int diTensao, int diNumeroPortas, String tipoDiNome) {
-super();
-this.diId = diId;
-this.diEnderecoFisico = diEnderecoFisico;
-this.diMarca = diMarca;
-this.diProcessador = diProcessador;
-this.diTela = diTela;
-this.diArmazenamento = diArmazenamento;
-this.diMemoria = diMemoria;
-this.diTensao = diTensao;
-this.diNumeroPortas = diNumeroPortas;
-this.tipoDiNome = tipoDiNome;
-}
-private Integer diId;
+	
+	public DispositivoInformaticaDto(Integer diId, String diEnderecoFisico, String diMarca, String diProcessador,
+			String diTela, Double diArmazenamento, Double diMemoria, Integer diTensao, Integer diNumeroPortas, String tipoDiNome, Date leilaoDataOcorrencia) {
+		super();
+		this.diId = diId;
+		this.diEnderecoFisico = diEnderecoFisico;
+		this.diMarca = diMarca;
+		this.diProcessador = diProcessador;
+		this.diTela = diTela;
+		this.diArmazenamento = diArmazenamento;
+		this.diMemoria = diMemoria;
+		this.diTensao = diTensao;
+		this.diNumeroPortas = diNumeroPortas;
+		this.tipoDiNome = tipoDiNome;
+		this.leilaoDataOcorrencia = leilaoDataOcorrencia;
+	}
 
-private String diEnderecoFisico;
+	private Integer diId;
+	
+	private String diEnderecoFisico;
+	
+	private String diMarca;
+	
+	private String diProcessador; 
+	
+	private String diTela;
+	
+	private Double diArmazenamento;
+	
+	private Double diMemoria;
+	
+	private Integer diTensao;
+	
+	private Integer diNumeroPortas;
+	
+	private String tipoDiNome;
+	
+	private Date leilaoDataOcorrencia;
+	
+	
+	
+	
 
-private String diMarca;
+	public Date getLeilaoDataOcorrencia() {
+		return leilaoDataOcorrencia;
+	}
 
-private String diProcessador; 
+	public void setLeilaoDataOcorrencia(Date leilaoDataOcorrencia) {
+		this.leilaoDataOcorrencia = leilaoDataOcorrencia;
+	}
 
-private String diTela;
+	public void setDiMemoria(Double diMemoria) {
+		this.diMemoria = diMemoria;
+	}
 
-private double diArmazenamento;
+	public Integer getDiId() {
+		return diId;
+	}
 
-private double diMemoria;
+	public void setDiId(Integer diId) {
+		this.diId = diId;
+	}
 
-private int diTensao;
+	public String getDiEnderecoFisico() {
+		return diEnderecoFisico;
+	}
 
-private int diNumeroPortas;
+	public void setDiEnderecoFisico(String diEnderecoFisico) {
+		this.diEnderecoFisico = diEnderecoFisico;
+	}
 
-private String tipoDiNome;
-public Integer getDiId() {
-return diId;
-}
-public void setDiId(Integer diId) {
-this.diId = diId;
-}
-public String getDiEnderecoFisico() {
-return diEnderecoFisico;
-}
-public void setDiEnderecoFisico(String diEnderecoFisico) {
-this.diEnderecoFisico = diEnderecoFisico;
-}
-public String getDiMarca() {
-return diMarca;
-}
-public void setDiMarca(String diMarca) {
-this.diMarca = diMarca;
-}
-public String getDiProcessador() {
-return diProcessador;
-}
-public void setDiProcessador(String diProcessador) {
-this.diProcessador = diProcessador;
-}
-public String getDiTela() {
-return diTela;
-}
-public void setDiTela(String diTela) {
-this.diTela = diTela;
-}
-public double getDiArmazenamento() {
-return diArmazenamento;
-}
-public void setDiArmazenamento(double diArmazenamento) {
-this.diArmazenamento = diArmazenamento;
-}
-public double getDiMemoria() {
-return diMemoria;
-}
-public void setDiMemoria(double diMemoria) {
-this.diMemoria = diMemoria;
-}
-public int getDiTensao() {
-return diTensao;
-}
-public void setDiTensao(int diTensao) {
-this.diTensao = diTensao;
-}
-public int getDiNumeroPortas() {
-return diNumeroPortas;
-}
-public void setDiNumeroPortas(int diNumeroPortas) {
-this.diNumeroPortas = diNumeroPortas;
-}
-public String getTipoDiNome() {
-return tipoDiNome;
-}
-public void setTipoDiNome(String tipoDiNome) {
-this.tipoDiNome = tipoDiNome;
-}
+	public String getDiMarca() {
+		return diMarca;
+	}
 
+	public void setDiMarca(String diMarca) {
+		this.diMarca = diMarca;
+	}
 
+	public String getDiProcessador() {
+		return diProcessador;
+	}
+
+	public void setDiProcessador(String diProcessador) {
+		this.diProcessador = diProcessador;
+	}
+
+	public String getDiTela() {
+		return diTela;
+	}
+
+	public void setDiTela(String diTela) {
+		this.diTela = diTela;
+	}
+
+	public Double getDiArmazenamento() {
+		return diArmazenamento;
+	}
+
+	public void setDiArmazenamento(Double diArmazenamento) {
+		this.diArmazenamento = diArmazenamento;
+	}
+
+	public double getDiMemoria() {
+		return diMemoria;
+	}
+
+	public void setDiMemoria(double diMemoria) {
+		this.diMemoria = diMemoria;
+	}
+
+	public Integer getDiTensao() {
+		return diTensao;
+	}
+
+	public void setDiTensao(Integer diTensao) {
+		this.diTensao = diTensao;
+	}
+
+	public Integer getDiNumeroPortas() {
+		return diNumeroPortas;
+	}
+
+	public void setDiNumeroPortas(Integer diNumeroPortas) {
+		this.diNumeroPortas = diNumeroPortas;
+	}
+
+	public String getTipoDiNome() {
+		return tipoDiNome;
+	}
+
+	public void setTipoDiNome(String tipoDiNome) {
+		this.tipoDiNome = tipoDiNome;
+	}
 }

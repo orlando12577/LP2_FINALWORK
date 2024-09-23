@@ -29,13 +29,23 @@ public class DispositivoInformatica {
     @JoinColumn(name = "tipoDi")
     private TiposDi tipoDi;
 
+
+    @ManyToOne
+	@JoinColumn(name = "leilao")
+	private Leilao leilao;
+
+  
+
+
+
+
     // Construtor padrão (necessário para JPA)
     public DispositivoInformatica() {
     }
 
     // Construtor com todos os parâmetros
     public DispositivoInformatica(String diEnderecoFisico, String diMarca, String diProcessador, String diTela,
-                                  double diArmazenamento, double diMemoria, int diTensao, int diNumeroPortas, TiposDi tipoDi) {
+                                  double diArmazenamento, double diMemoria, int diTensao, int diNumeroPortas, TiposDi tipoDi, Leilao leilao) {
         this.diEnderecoFisico = diEnderecoFisico;
         this.diMarca = diMarca;
         this.diProcessador = diProcessador;
@@ -45,9 +55,16 @@ public class DispositivoInformatica {
         this.diTensao = diTensao;
         this.diNumeroPortas = diNumeroPortas;
         this.tipoDi = tipoDi;
+        this.leilao = leilao;
     }
 
-    // Getters e Setters
+    public Leilao getLeilao() {
+		return leilao;
+	}
+	public void setLeilao(Leilao leilao) {
+		this.leilao = leilao;
+	}
+
     public int getDiId() {
         return diId;
     }
