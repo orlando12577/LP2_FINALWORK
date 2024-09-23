@@ -7,7 +7,7 @@ import com.example.lp2_finalwork.Models.EntidadeFinanceira;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface EntidadesFinanceirasRepository extends JpaRepository<EntidadesFinanceirasController, Integer> {
+public interface EntidadesFinanceirasRepository extends JpaRepository<EntidadeFinanceira, Integer> {
 }
 
 

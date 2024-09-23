@@ -16,7 +16,6 @@ import java.util.Optional;
 @RequestMapping("/api/entidades-financeiras")
 public class EntidadesFinanceirasController {
 
-    
     @Autowired
     private EntidadesFinanceirasService entidadesFinanceirasService;
 
@@ -47,5 +46,6 @@ public class EntidadesFinanceirasController {
     public ResponseEntity<EntidadesFinanceirasDto> getById (@PathVariable Integer id){
         return  entidadesFinanceirasService.getById (id);
     }
+
 
 }

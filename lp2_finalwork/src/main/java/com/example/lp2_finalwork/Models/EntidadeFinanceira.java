@@ -10,24 +10,25 @@ import jakarta.persistence.Table;
 @Table(name = "ENTIDADE_FINANCEIRA")
 public class EntidadeFinanceira {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer entfinId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer entfinId;
+	
+	private String entfinNome;
 
-    private String entfinNome;
+	public Integer getEntfinId() {
+		return entfinId;
+	}
 
-    public Integer getEntfinId() {  // O nome deve ser getEntfinId
-        return entfinId;
-    }
+	public void setEntfinId(Integer entfinId) {
+		this.entfinId = entfinId;
+	}
 
-    public void setEntfinId(Integer entfinId) {
-        this.entfinId = entfinId;
-    }
+	public String getEntfinNome() {
+		return entfinNome;
+	}
 
-    public String getEntfinNome() {
-        return entfinNome;
-    }
-
-    public void setEntfinNome(String entfinNome) {
-        this.entfinNome = entfinNome;
-    }
+	public void setEntfinNome(String entfinNome) {
+		this.entfinNome = entfinNome;
+	}
+	
 }
