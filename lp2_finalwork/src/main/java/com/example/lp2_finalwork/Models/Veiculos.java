@@ -11,11 +11,11 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "VEICULOS")
 public class Veiculos {
-
-
-    public Veiculos() {
-    }
-
+	
+	public Veiculos() {}
+	
+	
+	
 	public Veiculos(String veiPlaca, String veiMarca, Integer veiAnoFabricacao, Double veiDistanciaRodada,
 			String veiCambio, String veiCombustivel, String veiCor, Double veiPeso, TiposVeiculos tipoVeiculo,
 			Leilao leilao) {
@@ -31,7 +31,9 @@ public class Veiculos {
 		this.tipoVeiculo = tipoVeiculo;
 		this.leilao = leilao;
 	}
-    
+
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer veiId;
@@ -51,8 +53,8 @@ public class Veiculos {
 	private String veiCor;
 	
 	private Double veiPeso;
-
-    @ManyToOne
+	
+	@ManyToOne
 	@JoinColumn(name = "tipo_veiculo")
 	private TiposVeiculos tipoVeiculo;
 	
@@ -60,76 +62,95 @@ public class Veiculos {
 	@JoinColumn(name = "leilao")
 	private Leilao leilao;
 	
-    public Integer getVeiId() {
-        return veiId;
-    }
+	
 
-    public void setVeiId(Integer veiId) {
-        this.veiId = veiId;
-    }
+	public Leilao getLeilao() {
+		return leilao;
+	}
 
-    public String getVeiPlaca() {
-        return veiPlaca;
-    }
+	public void setLeilao(Leilao leilao) {
+		this.leilao = leilao;
+	}
 
-    public void setVeiPlaca(String veiPlaca) {
-        this.veiPlaca = veiPlaca;
-    }
+	public Integer getVeiId() {
+		return veiId;
+	}
 
-    public String getVeiMarca() {
-        return veiMarca;
-    }
+	public void setVeiId(Integer veiId) {
+		this.veiId = veiId;
+	}
 
-    public void setVeiMarca(String veiMarca) {
-        this.veiMarca = veiMarca;
-    }
+	public String getVeiPlaca() {
+		return veiPlaca;
+	}
 
-    public Integer getVeiAnoFabricacao() {
-        return veiAnoFabricacao;
-    }
+	public void setVeiPlaca(String veiPlaca) {
+		this.veiPlaca = veiPlaca;
+	}
 
-    public void setVeiAnoFabricacao(Integer veiAnoFabricacao) {
-        this.veiAnoFabricacao = veiAnoFabricacao;
-    }
+	public String getVeiMarca() {
+		return veiMarca;
+	}
 
-    public Double getVeiDistanciaRodada() {
-        return veiDistanciaRodada;
-    }
+	public void setVeiMarca(String veiMarca) {
+		this.veiMarca = veiMarca;
+	}
 
-    public void setVeiDistanciaRodada(Double veiDistanciaRodada) {
-        this.veiDistanciaRodada = veiDistanciaRodada;
-    }
+	public Integer getVeiAnoFabricacao() {
+		return veiAnoFabricacao;
+	}
 
-    public String getVeiCambio() {
-        return veiCambio;
-    }
+	public void setVeiAnoFabricacao(Integer veiAnoFabricacao) {
+		this.veiAnoFabricacao = veiAnoFabricacao;
+	}
 
-    public void setVeiCambio(String veiCambio) {
-        this.veiCambio = veiCambio;
-    }
+	public Double getVeiDistanciaRodada() {
+		return veiDistanciaRodada;
+	}
 
-    public String getVeiCombustivel() {
-        return veiCombustivel;
-    }
+	public void setVeiDistanciaRodada(Double veiDistanciaRodada) {
+		this.veiDistanciaRodada = veiDistanciaRodada;
+	}
 
-    public void setVeiCombustivel(String veiCombustivel) {
-        this.veiCombustivel = veiCombustivel;
-    }
+	public String getVeiCambio() {
+		return veiCambio;
+	}
 
-    public String getVeiCor() {
-        return veiCor;
-    }
+	public void setVeiCambio(String veiCambio) {
+		this.veiCambio = veiCambio;
+	}
 
-    public void setVeiCor(String veiCor) {
-        this.veiCor = veiCor;
-    }
+	public String getVeiCombustivel() {
+		return veiCombustivel;
+	}
 
-    public Double getVeiPeso() {
-        return veiPeso;
-    }
+	public void setVeiCombustivel(String veiCombustivel) {
+		this.veiCombustivel = veiCombustivel;
+	}
 
-    public void setVeiPeso(Double veiPeso) {
-        this.veiPeso = veiPeso;
-    }
-    
+	public String getVeiCor() {
+		return veiCor;
+	}
+
+	public void setVeiCor(String veiCor) {
+		this.veiCor = veiCor;
+	}
+
+	public Double getVeiPeso() {
+		return veiPeso;
+	}
+
+	public void setVeiPeso(Double veiPeso) {
+		this.veiPeso = veiPeso;
+	}
+
+	public TiposVeiculos getTipoVeiculo() {
+		return tipoVeiculo;
+	}
+
+	public void setTipoVeiculo(TiposVeiculos tipoVeiculo) {
+		this.tipoVeiculo = tipoVeiculo;
+	}
+	
+	
 }

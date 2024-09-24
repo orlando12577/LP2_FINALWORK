@@ -12,26 +12,26 @@ public class TiposVeiculos {
     	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer tipoveiId;
+	private Integer tveiId;
 	
-	private String tipoveiNome;
+	private String tveiNome;
 
-	public Integer getTipoveiId() {
-		return tipoveiId;
+	public Integer getTveiId() {
+		return tveiId;
 	}
 
-	public void setTipoveiId(Integer tveiId) {
-		this.tipoveiId = tveiId;
+	public void setTveiId(Integer tveiId) {
+		this.tveiId = tveiId;
 	}
 
 	public String getTveiNome() {
-		return tipoveiNome;
+		return tveiNome;
 	}
 
 	public void setTveiNome(String tveiNome) {
-		this.tipoveiNome = tipoveiNome;
+		this.tveiNome = tveiNome;
 	}
 	
 	
-    
+
 }

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.lp2_finalwork.Services.LeilaoService;
 import com.example.lp2_finalwork.dtos.LeilaoDto;
 import com.example.lp2_finalwork.dtos.LeilaoForm;
-import com.example.lp2_finalwork.Services.DispositivosInformaticaService;
+
 
 import java.util.List;
 
@@ -24,40 +24,35 @@ import java.util.List;
 @RequestMapping("/api/leilao")
 @CrossOrigin(origins="*")
 public class LeiloesController {
+	@Autowired
+    private LeilaoService leilaoService;
 
-	private LeilaoService leilaoService;
-	
-	@GetMapping
-	public ResponseEntity<List<LeilaoDto>> getAll() {
+    @GetMapping
+    public ResponseEntity<List<LeilaoDto>> getAll() {
 
-		return leilaoService.getAll();
-	}
-	
-	@GetMapping(value = "/dataOcorrencia")
-	public ResponseEntity<List<LeilaoDto>> getAllOrderByDataOcorrencia(){
-		return leilaoService.getAllOrderByDataOcorrencia();
-	}
-	
-	@PostMapping
-	public ResponseEntity<LeilaoDto> save(@RequestBody LeilaoForm leilaoForm) {
-		
-		
-		return leilaoService.save(leilaoForm);
-	}
-	
-	@PutMapping("/{id}")
-	public ResponseEntity<LeilaoDto> update(@RequestBody LeilaoForm leilaoForm, @PathVariable Integer id) {
-		return leilaoService.update(leilaoForm, id);
-	}
-	
-	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Integer id) {
-		leilaoService.delete(id);
-	}
-	
-	@GetMapping("/{id}")
-	public ResponseEntity<LeilaoDto> getById(@PathVariable Integer id){
-		return leilaoService.getById(id);
-	}
+        return leilaoService.getAll();
+    }
+
+    @PostMapping
+    public ResponseEntity<LeilaoDto> save(@RequestBody LeilaoForm leilaoForm) {
+
+
+        return leilaoService.save(leilaoForm);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<LeilaoDto> update(@RequestBody LeilaoForm leilaoForm, @PathVariable Integer id) {
+        return leilaoService.update(leilaoForm, id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        leilaoService.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<LeilaoDto> getById(@PathVariable Integer id){
+        return leilaoService.getById(id);
+    }
 }
 
