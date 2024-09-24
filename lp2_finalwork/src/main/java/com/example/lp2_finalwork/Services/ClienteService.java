@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.example.lp2_finalwork.Exceptions.ClienteJaCadastradoException;
 import com.example.lp2_finalwork.Models.Cliente;
 import com.example.lp2_finalwork.Repository.ClienteRepository;
 import com.example.lp2_finalwork.dtos.ClienteDto;
@@ -15,7 +16,7 @@ import jakarta.transaction.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class ClienteService {
@@ -36,6 +37,11 @@ public class ClienteService {
 	
 	public ResponseEntity<ClienteDto> save(ClienteForm clienteForm)  {
 		
+		Cliente cliente = clienteRepository.findBycliCpf(clienteForm.getCliCpf()); 
+		
+		if(cliente != null) {
+			throw new ClienteJaCadastradoException("Já existe cliente cadastrado com o cpf: " + clienteForm.getCliCpf());
+		}
 
 		Cliente clienteNovo = new Cliente(
 				clienteForm.getCliCpf(),
@@ -74,4 +80,5 @@ public class ClienteService {
 		return new ClienteDto(Cliente.getCliCpf(), Cliente.getCliNome(), Cliente.getCliEmail());
 	}
 }
+
 

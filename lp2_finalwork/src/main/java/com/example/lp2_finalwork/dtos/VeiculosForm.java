@@ -1,7 +1,5 @@
 package com.example.lp2_finalwork.dtos;
 
-import com.example.lp2_finalwork.Models.TiposVeiculos;
-import java.util.Date;
 
 public class VeiculosForm {
       

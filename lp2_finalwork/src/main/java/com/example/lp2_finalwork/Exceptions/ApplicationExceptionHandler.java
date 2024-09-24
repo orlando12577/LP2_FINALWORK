@@ -17,8 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler  {
 
-    
-	@ExceptionHandler(EntityNotFoundException.class)
+    @ExceptionHandler(EntityNotFoundException.class)
 	public ResponseEntity<DefaultError> handleException(EntityNotFoundException e, HttpServletRequest request) {
 		
 		DefaultError erro = new DefaultError(HttpStatus.NOT_FOUND.value(), e.getMessage());
@@ -52,4 +51,19 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
 		DefaultError erro = new DefaultError(HttpStatus.UNPROCESSABLE_ENTITY.value(), e.getMessage());
 		return new ResponseEntity<DefaultError>(erro, HttpStatus.UNPROCESSABLE_ENTITY);
 	}
+	
+	@ExceptionHandler(LeilaoSemEntidadesFinanceirasAssociadas.class)
+	public ResponseEntity<DefaultError> leilaoSemEntidadeFinanceira(LeilaoSemEntidadesFinanceirasAssociadas e, HttpServletRequest request) {
+		
+		DefaultError erro = new DefaultError(HttpStatus.UNPROCESSABLE_ENTITY.value(), e.getMessage());
+		return new ResponseEntity<DefaultError>(erro, HttpStatus.UNPROCESSABLE_ENTITY);
+	}
+	
+	@ExceptionHandler(ClienteJaCadastradoException.class)
+	public ResponseEntity<DefaultError> clienteJaCadastrado(ClienteJaCadastradoException e, HttpServletRequest request) {
+		
+		DefaultError erro = new DefaultError(HttpStatus.UNPROCESSABLE_ENTITY.value(), e.getMessage());
+		return new ResponseEntity<DefaultError>(erro, HttpStatus.UNPROCESSABLE_ENTITY);
+	}
+
 }
