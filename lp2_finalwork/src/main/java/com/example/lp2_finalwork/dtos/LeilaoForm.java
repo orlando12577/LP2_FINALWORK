@@ -1,7 +1,7 @@
 package com.example.lp2_finalwork.dtos;
 import java.time.LocalDateTime;
 
-
+import java.util.List;
 
 public class LeilaoForm {
    
@@ -16,6 +16,20 @@ public class LeilaoForm {
 	private String leiestado;
 	
 	private String leiEnderecoWeb;
+	
+	private List<Integer> idEntidadesFinanceiras;
+
+	
+	
+	
+
+	public List<Integer> getIdEntidadesFinanceiras() {
+		return idEntidadesFinanceiras;
+	}
+
+	public void setIdEntidadesFinanceiras(List<Integer> idEntidadesFinanceiras) {
+		this.idEntidadesFinanceiras = idEntidadesFinanceiras;
+	}
 
 	public LocalDateTime getLeiDataOcorrencia() {
 		return leiDataOcorrencia;

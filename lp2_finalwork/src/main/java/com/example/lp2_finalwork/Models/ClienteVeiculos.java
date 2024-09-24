@@ -13,8 +13,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "CLIENTE_VEICULO")
 public class ClienteVeiculos {
-
-    @Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cliveiId;
 	
@@ -43,7 +42,12 @@ public class ClienteVeiculos {
 		this.clidiDataHoraLance = clidiDataHoraLance;
 	}
 	
-    public LocalDateTime getClidiDataHoraLance() {
+	
+
+
+
+
+	public LocalDateTime getClidiDataHoraLance() {
 		return clidiDataHoraLance;
 	}
 
@@ -90,8 +94,6 @@ public class ClienteVeiculos {
 	}
 	
 
-
-	
 
     
 }

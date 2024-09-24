@@ -17,16 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-import com.example.lp2_finalwork.Models.ClienteDispositivoInformatica;
+
 import com.example.lp2_finalwork.Services.ClienteDIspositivoInformativaService;
 import com.example.lp2_finalwork.dtos.ClienteDispositivoInformaticaDto;
 import com.example.lp2_finalwork.dtos.ClienteDispositivoInformaticaForm;
 
 
-import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/lanceDi")

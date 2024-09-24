@@ -10,13 +10,13 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
-import java.util.Date;
+
 import java.util.List;
 
 @Entity
 @Table(name = "LEILAO")
 public class Leilao {
-  @Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer leiId;
 	
@@ -32,11 +32,18 @@ public class Leilao {
 	
 	private String leiEnderecoWeb;
 	
+	@ManyToMany
+    @JoinTable(
+    		name="leilao_entidade_financeira",
+    		joinColumns= @JoinColumn(name = "leiId"), 
+    		inverseJoinColumns=@JoinColumn(name="entfinId"))
+	private List<EntidadeFinanceira> entidadesFinanceiras;
+	
 	public Leilao() {}
 	
 	
 	public Leilao(LocalDateTime leiDataOcorrencia, LocalDateTime leiDataVisitacao, String leiEndereco, String leiCidade, String leiEstado,
-			String leiEnderecoWeb) {
+			String leiEnderecoWeb, List<EntidadeFinanceira> entidadeFinanceiras) {
 		super();
 		this.leiDataOcorrencia = leiDataOcorrencia;
 		this.leiDataVisitacao = leiDataVisitacao;
@@ -44,7 +51,20 @@ public class Leilao {
 		this.leiCidade = leiCidade;
 		this.leiEstado = leiEstado;
 		this.leiEnderecoWeb = leiEnderecoWeb;
+		this.entidadesFinanceiras = entidadeFinanceiras;
 	}
+	
+	
+
+	public List<EntidadeFinanceira> getEntidadesFinanceiras() {
+		return entidadesFinanceiras;
+	}
+
+
+	public void setEntidadesFinanceiras(List<EntidadeFinanceira> entidadesFinanceiras) {
+		this.entidadesFinanceiras = entidadesFinanceiras;
+	}
+
 
 	public Integer getLeiId() {
 		return leiId;
@@ -101,4 +121,7 @@ public class Leilao {
 	public void setLeiEnderecoWeb(String leiEnderecoWeb) {
 		this.leiEnderecoWeb = leiEnderecoWeb;
 	}
+	
+	
+
 }
