@@ -20,7 +20,7 @@ import com.example.lp2_finalwork.dtos.DispositivoInformaticaForm;
 
 @RestController
 @RequestMapping("/api/dispositivosinformatica")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins="*")
 public class DispositivosInformaticaController {
 
     @Autowired

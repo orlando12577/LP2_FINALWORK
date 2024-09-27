@@ -1,5 +1,7 @@
 package com.example.lp2_finalwork.Models;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -14,6 +16,9 @@ public class Cliente{
     private String cliNome;
     private String cliEmail;
    
+       // Construtor padrão
+       public Cliente() {
+    }
    
     public Cliente(String cliCpf, String cliNome, String cliEmail) {
 		super();

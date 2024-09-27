@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/entidades-financeiras")
+@CrossOrigin(origins="*")
 public class EntidadesFinanceirasController {
 
     @Autowired

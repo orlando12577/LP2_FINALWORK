@@ -32,8 +32,6 @@ public class Veiculos {
 		this.leilao = leilao;
 	}
 
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer veiId;
