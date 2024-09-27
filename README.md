@@ -30,3 +30,11 @@ Verifique a instalação do JDK com o comando
 ```bash
 java -version
 
+Maven
+Verifique a instalação do Maven com o comando:
+
+```bash
+mvn -version
+
+
+
