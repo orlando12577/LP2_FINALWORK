@@ -72,10 +72,7 @@ Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos
 
 - Certifique-se de que as dependências e configurações do projeto, como as permissões e o contexto da aplicação, estão corretas antes de realizar testes extensivos.
 
-Seguindo essas instruções, você poderá iniciar e explorar todas as funcionalidades do projeto Lp2FinalworkApplication. Se precisar de mais informações ou esclarecimentos adicionais, estou à disposição para ajudar!
-
-
-
+Seguindo essas instruções, você poderá iniciar e explorar todas as funcionalidades do projeto Lp2FinalworkApplication. 
 
 
 
