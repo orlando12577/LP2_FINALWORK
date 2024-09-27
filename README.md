@@ -37,6 +37,11 @@ Verifique a instalação do Maven com o comando:
 
 ```bash
 mvn -version
+```
+
+2) Clone ou baixe o repositório do projeto e insira e importe o projeto pelo Maven na IDE de preferência (Eclipse, Visual Studio Code, etc...);
+
+
 
 
 
