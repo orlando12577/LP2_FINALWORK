@@ -41,6 +41,8 @@ mvn -version
 
 2) Clone ou baixe o repositório do projeto e insira e importe o projeto pelo Maven na IDE de preferência (Eclipse, Visual Studio Code, etc...);
 
+3) Após a abertura do Projeto :
+
 
 
 # Guia de Execução do Projeto LP2 Final Work: 
