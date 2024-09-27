@@ -43,5 +43,40 @@ mvn -version
 
 
 
+# Guia de Execução do Projeto LP2 Final Work: 
+
+Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos, desenvolvido como trabalho final de Programação Orientada a Objetos. Para executá-lo e testar suas funcionalidades, siga as etapas abaixo:
+
+1) Iniciar o Projeto:
+
+- Certifique-se de que todas as dependências estão instaladas e que o projeto está configurado corretamente.
+- Navegue até o package com.example.lp2_finalwork e execute a classe principal Lp2FinalworkApplication. Isso iniciará o servidor Spring Boot e carregará as configurações necessárias.
+
+2) Banco de Dados H2:
+
+- O projeto utiliza o banco de dados H2 em memória. Isso significa que todas as informações inseridas, consultadas ou modificadas só estarão disponíveis durante o tempo em que a aplicação estiver ativa.
+
+3) Documentação das APiS:
+
+- A documentação das APIs, gerada automaticamente pelo Swagger, estará disponível assim que o projeto for iniciado. Você pode acessá-la em: Swagger UI 
+
+- Esta documentação fornece detalhes sobre as rotas disponíveis, tipos de requisição, parâmetros esperados e exemplos de respostas para cada operação suportada pelo sistema.
+
+4) Tipos de Dispositivos e Veículos:
+
+- As categorias aceitas para dispositivos de informática incluem, por exemplo, laptops, desktops, tablets e servidores. Já para veículos, as opções podem englobar carros, caminhões e motocicletas, conforme definido nos requisitos do projeto.
+
+6) Observações Importantes:
+
+- O banco de dados H2 é temporário e seus dados serão perdidos após a reinicialização do projeto. Para ambientes de produção, recomenda-se utilizar um banco de dados relacional persistente, como MySQL ou PostgreSQL, configurando-o no arquivo application.properties.
+
+- Certifique-se de que as dependências e configurações do projeto, como as permissões e o contexto da aplicação, estão corretas antes de realizar testes extensivos.
+
+Seguindo essas instruções, você poderá iniciar e explorar todas as funcionalidades do projeto Lp2FinalworkApplication. Se precisar de mais informações ou esclarecimentos adicionais, estou à disposição para ajudar!
+
+
+
+
+
 
 
