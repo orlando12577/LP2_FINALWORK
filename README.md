@@ -17,6 +17,9 @@ Este projeto é um sistema de Leilão Eletrônico desenvolvido em Java utilizand
 
  # Passo a passo para rodar a aplicação: 
 
+
+
+
 1. Pré-Requisitos
 Certifique-se de ter os seguintes pré-requisitos instalados no seu sistema:
 
