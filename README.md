@@ -85,7 +85,7 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 - Veículos: carros e motocicletas de passeio, caminhões e utilitários apreendidos.
 
 
-###Funcionalidades Básicas
+### Funcionalidades Básicas
 
 O sistema deve contemplar as seguintes funcionalidades:
 
