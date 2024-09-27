@@ -14,3 +14,16 @@ Este projeto é um sistema de Leilão Eletrônico desenvolvido em Java utilizand
  <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lombok.png" alt="Lombok" width="100" height="100"/>
   <img src="https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png" alt="Swagger" width="100" height="100"/>
 </p>
+
+ # Passo a passo para rodar a aplicação: 
+
+1. Pré-Requisitos
+Certifique-se de ter os seguintes pré-requisitos instalados no seu sistema:
+
+Java Development Kit (JDK) 11 ou superior
+Verifique a instalação do JDK com o comando
+
+
+```bash
+java -version
+
