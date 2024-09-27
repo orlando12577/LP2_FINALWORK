@@ -75,5 +75,55 @@ Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos
 Seguindo essas instruções, você poderá iniciar e explorar todas as funcionalidades do projeto Lp2FinalworkApplication. 
 
 
+## Requisitos do Projeto: 
 
+
+O novo sistema visa direcionar o escopo inicial para leilões específicos de:
+
+- Dispositivos de informática: notebooks, monitores, hubs, switches e roteadores.
+
+- Veículos: carros e motocicletas de passeio, caminhões e utilitários apreendidos.
+
+
+###Funcionalidades Básicas
+
+O sistema deve contemplar as seguintes funcionalidades:
+
+1) Gestão de Dispositivos de Informática:
+
+Registro, consulta, atualização e remoção dos dispositivos de informática a serem leiloados.
+Os detalhes dos dados para representar esses dispositivos fazem parte da pesquisa sobre o domínio do sistema.
+
+2) Gestão de Veículos:
+
+- Registro, consulta, atualização e remoção dos veículos a serem leiloados.
+- Os detalhes dos dados para representar esses veículos fazem parte da pesquisa sobre o domínio do sistema.
+
+3) Gestão de Leilões:
+
+- Registro, consulta, atualização e remoção de leilões, contendo:
+- Data de ocorrência futura.
+- Data de visitação dos itens.
+- Local do leilão (endereço, cidade e estado).
+- Demais detalhes pertinentes ao domínio de um leilão eletrônico, incluindo entrada física no local.
+
+
+
+
+4) Associação de Produtos aos Leilões:
+
+- O registro de produtos (dispositivos de informática e veículos) deve ser independente do leilão, porém no momento de seu cadastro, obrigatoriamente deverão estar vinculados a um leilão já registrado.
+- Possibilidade de desassociar um item de leilão que não tenha sido vendido (sem lance) do leilão atual e associá-lo a outro leilão futuro, respeitando a obrigatoriedade de sempre estar associado a um leilão presente ou futuro.
+
+
+5) Gestão de Clientes:
+
+- Registro, consulta, atualização e remoção dos dados de cada cliente autorizado a interagir com o sistema.
+- Clientes podem fornecer lances e consultar detalhes dos produtos anunciados nos leilões.
+
+
+6) Gestão de Instituições Financeiras:
+
+- Registro, consulta, atualização e remoção das instituições financeiras responsáveis pela quitação das transações fechadas durante os leilões.
+- Cada leilão deve ter ao menos uma entidade financeira associada (CNPJ).
 
