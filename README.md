@@ -41,10 +41,22 @@ mvn -version
 
 2) Clone ou baixe o repositório do projeto e insira e importe o projeto pelo Maven na IDE de preferência (Eclipse, Visual Studio Code, etc...);
 
+
+
 3) Após a abertura do Projeto :
 
+   
+```bash
+ cd lp2_finalwork
+```
 
+```bash
+mvn install 
+```
 
+```bash
+mvn spring-boot:run
+```
 # Guia de Execução do Projeto LP2 Final Work: 
 
 Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos, desenvolvido como trabalho final de Programação Orientada a Objetos. Para executá-lo e testar suas funcionalidades, siga as etapas abaixo:
