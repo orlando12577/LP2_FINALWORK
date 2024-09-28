@@ -43,7 +43,7 @@ mvn -version
 
 
 
-3) Após a abertura do Projeto :
+3) Após a abertura do Projeto,execute os seguintes comandos:
 
    
 ```bash
@@ -57,13 +57,14 @@ mvn install
 ```bash
 mvn spring-boot:run
 ```
-# Guia do Projeto LP2 Final Work: 
+# Sobre o projeto LP2 Final Work: 
 
 Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos, desenvolvido como trabalho final de Programação Orientada a Objetos. Para executá-lo e testar suas funcionalidades, siga as etapas abaixo:
 
 1) Iniciar o Projeto:
 
 - Certifique-se de que todas as dependências estão instaladas e que o projeto está configurado corretamente.
+  
 - Navegue até o package com.example.lp2_finalwork e execute a classe principal Lp2FinalworkApplication. Isso iniciará o servidor Spring Boot e carregará as configurações necessárias.
 
 2) Banco de Dados H2:
@@ -105,12 +106,14 @@ O sistema deve contemplar as seguintes funcionalidades:
 
 1) Gestão de Dispositivos de Informática:
 
-Registro, consulta, atualização e remoção dos dispositivos de informática a serem leiloados.
-Os detalhes dos dados para representar esses dispositivos fazem parte da pesquisa sobre o domínio do sistema.
+- Registro, consulta, atualização e remoção dos dispositivos de informática a serem leiloados.
+  
+- Os detalhes dos dados para representar esses dispositivos fazem parte da pesquisa sobre o domínio do sistema.
 
 2) Gestão de Veículos:
 
 - Registro, consulta, atualização e remoção dos veículos a serem leiloados.
+  
 - Os detalhes dos dados para representar esses veículos fazem parte da pesquisa sobre o domínio do sistema.
 
 3) Gestão de Leilões:
@@ -123,16 +126,17 @@ Os detalhes dos dados para representar esses dispositivos fazem parte da pesquis
 
 
 
-
 4) Associação de Produtos aos Leilões:
 
 - O registro de produtos (dispositivos de informática e veículos) deve ser independente do leilão, porém no momento de seu cadastro, obrigatoriamente deverão estar vinculados a um leilão já registrado.
+  
 - Possibilidade de desassociar um item de leilão que não tenha sido vendido (sem lance) do leilão atual e associá-lo a outro leilão futuro, respeitando a obrigatoriedade de sempre estar associado a um leilão presente ou futuro.
 
 
 5) Gestão de Clientes:
 
 - Registro, consulta, atualização e remoção dos dados de cada cliente autorizado a interagir com o sistema.
+  
 - Clientes podem fornecer lances e consultar detalhes dos produtos anunciados nos leilões.
 
 
