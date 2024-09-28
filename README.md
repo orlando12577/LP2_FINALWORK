@@ -82,7 +82,7 @@ Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos
 
 6) Observações Importantes:
 
-- O banco de dados H2 é temporário e seus dados serão perdidos após a reinicialização do projeto. Para ambientes de produção, recomenda-se utilizar um banco de dados relacional persistente, como MySQL ou PostgreSQL, configurando-o no arquivo application.properties.
+- O banco de dados H2 é temporário e seus dados serão perdidos após a reinicialização do projeto. Além disso, o projeto utiliza o Swagger para facilitar a documentação e a visualização das APIs, permitindo que desenvolvedores explorem e testem os endpoints disponíveis de forma interativa,em que pode ser acessado através do link : http://localhost:8080/swagger-ui/index.html#/ .
 
 - Certifique-se de que as dependências e configurações do projeto, como as permissões e o contexto da aplicação, estão corretas antes de realizar testes extensivos.
 
