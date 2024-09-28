@@ -57,7 +57,7 @@ mvn install
 ```bash
 mvn spring-boot:run
 ```
-# Guia de Execução do Projeto LP2 Final Work: 
+# Guia do Projeto LP2 Final Work: 
 
 Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos, desenvolvido como trabalho final de Programação Orientada a Objetos. Para executá-lo e testar suas funcionalidades, siga as etapas abaixo:
 
