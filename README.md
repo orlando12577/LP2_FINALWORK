@@ -41,18 +41,25 @@ mvn -version
 
 2) Clone ou baixe o repositório do projeto e insira e importe o projeto pelo Maven na IDE de preferência (Eclipse, Visual Studio Code, etc...);
 
+- Em seu vscode instale:
 
+- Extension Pack for Java.
+- Spring Boot Extension Pack.
+- Lombok Annotations Support for VS Code.
 
-3) Após a abertura do Projeto,execute os seguintes comandos:
+3) Após a abertura do Projeto e instalação das extenções,execute os seguintes comandos:
 
+   ### Para rodar a aplicação:
    
 ```bash
  cd lp2_finalwork
 ```
+   ### Instale as Dependencias:
 
 ```bash
 mvn install 
 ```
+   ### Para rodar a Aplicação:
 
 ```bash
 mvn spring-boot:run
