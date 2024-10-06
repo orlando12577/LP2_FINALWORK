@@ -41,29 +41,37 @@ mvn -version
 
 2) Clone ou baixe o repositório do projeto e insira e importe o projeto pelo Maven na IDE de preferência (Eclipse, Visual Studio Code, etc...);
 
+- Em seu vscode instale:
 
+- Extension Pack for Java.
+- Spring Boot Extension Pack.
+- Lombok Annotations Support for VS Code.
 
-3) Após a abertura do Projeto :
+3) Após a abertura do Projeto e instalação das extenções,execute os seguintes comandos:
 
+  ### Para rodar a aplicação:
    
 ```bash
  cd lp2_finalwork
 ```
+   ### Instale as Dependencias:
 
 ```bash
 mvn install 
 ```
+   ### Para rodar a Aplicação:
 
 ```bash
 mvn spring-boot:run
 ```
-# Guia do Projeto LP2 Final Work: 
+# Sobre o projeto LP2 Final Work: 
 
 Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos, desenvolvido como trabalho final de Programação Orientada a Objetos. Para executá-lo e testar suas funcionalidades, siga as etapas abaixo:
 
 1) Iniciar o Projeto:
 
 - Certifique-se de que todas as dependências estão instaladas e que o projeto está configurado corretamente.
+  
 - Navegue até o package com.example.lp2_finalwork e execute a classe principal Lp2FinalworkApplication. Isso iniciará o servidor Spring Boot e carregará as configurações necessárias.
 
 2) Banco de Dados H2:
@@ -82,7 +90,7 @@ Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos
 
 6) Observações Importantes:
 
-- O banco de dados H2 é temporário e seus dados serão perdidos após a reinicialização do projeto. Para ambientes de produção, recomenda-se utilizar um banco de dados relacional persistente, como MySQL ou PostgreSQL, configurando-o no arquivo application.properties.
+- O banco de dados H2 é temporário e seus dados serão perdidos após a reinicialização do projeto. Além disso, o projeto utiliza o Swagger para facilitar a documentação e a visualização das APIs, permitindo que desenvolvedores explorem e testem os endpoints disponíveis de forma interativa,em que pode ser acessado através do link : http://localhost:8080/swagger-ui/index.html#/ .
 
 - Certifique-se de que as dependências e configurações do projeto, como as permissões e o contexto da aplicação, estão corretas antes de realizar testes extensivos.
 
@@ -105,12 +113,14 @@ O sistema deve contemplar as seguintes funcionalidades:
 
 1) Gestão de Dispositivos de Informática:
 
-Registro, consulta, atualização e remoção dos dispositivos de informática a serem leiloados.
-Os detalhes dos dados para representar esses dispositivos fazem parte da pesquisa sobre o domínio do sistema.
+- Registro, consulta, atualização e remoção dos dispositivos de informática a serem leiloados.
+  
+- Os detalhes dos dados para representar esses dispositivos fazem parte da pesquisa sobre o domínio do sistema.
 
 2) Gestão de Veículos:
 
 - Registro, consulta, atualização e remoção dos veículos a serem leiloados.
+  
 - Os detalhes dos dados para representar esses veículos fazem parte da pesquisa sobre o domínio do sistema.
 
 3) Gestão de Leilões:
@@ -123,16 +133,17 @@ Os detalhes dos dados para representar esses dispositivos fazem parte da pesquis
 
 
 
-
 4) Associação de Produtos aos Leilões:
 
 - O registro de produtos (dispositivos de informática e veículos) deve ser independente do leilão, porém no momento de seu cadastro, obrigatoriamente deverão estar vinculados a um leilão já registrado.
+  
 - Possibilidade de desassociar um item de leilão que não tenha sido vendido (sem lance) do leilão atual e associá-lo a outro leilão futuro, respeitando a obrigatoriedade de sempre estar associado a um leilão presente ou futuro.
 
 
 5) Gestão de Clientes:
 
 - Registro, consulta, atualização e remoção dos dados de cada cliente autorizado a interagir com o sistema.
+  
 - Clientes podem fornecer lances e consultar detalhes dos produtos anunciados nos leilões.
 
 
