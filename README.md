@@ -107,49 +107,40 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 - Veículos: carros e motocicletas de passeio, caminhões e utilitários apreendidos.
 
 
-### Funcionalidades Básicas
-
-O sistema deve contemplar as seguintes funcionalidades:
-
-1) Gestão de Dispositivos de Informática:
-
-- Registro, consulta, atualização e remoção dos dispositivos de informática a serem leiloados.
-  
-- Os detalhes dos dados para representar esses dispositivos fazem parte da pesquisa sobre o domínio do sistema.
-  
-
-2) Gestão de Veículos:
-
-- Registro, consulta, atualização e remoção dos veículos a serem leiloados.
-  
-- Os detalhes dos dados para representar esses veículos fazem parte da pesquisa sobre o domínio do sistema.
-
-3) Gestão de Leilões:
-
-- Registro, consulta, atualização e remoção de leilões, contendo:
-- Data de ocorrência futura.
-- Data de visitação dos itens.
-- Local do leilão (endereço, cidade e estado).
-- Demais detalhes pertinentes ao domínio de um leilão eletrônico, incluindo entrada física no local.
 
 
+### Funcionalidades da aplicação com a inserção dos testes : 
 
-4) Associação de Produtos aos Leilões:
+1) Inicialmente, os tipos de dispositivos de informática e veículos serão automaticamente inseridos no sistema.
 
-- O registro de produtos (dispositivos de informática e veículos) deve ser independente do leilão, porém no momento de seu cadastro, obrigatoriamente deverão estar vinculados a um leilão já registrado.
-  
-- Possibilidade de desassociar um item de leilão que não tenha sido vendido (sem lance) do leilão atual e associá-lo a outro leilão futuro, respeitando a obrigatoriedade de sempre estar associado a um leilão presente ou futuro.
-
-
-5) Gestão de Clientes:
-
-- Registro, consulta, atualização e remoção dos dados de cada cliente autorizado a interagir com o sistema.
-  
-- Clientes podem fornecer lances e consultar detalhes dos produtos anunciados nos leilões.
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/BD.jpeg" alt="BD" />
 
 
-6) Gestão de Instituições Financeiras:
+ 2) Após isso,cadastre as entidades financeiras que serão utilizadas nos cadastros dos leilões
 
-- Registro, consulta, atualização e remoção das instituições financeiras responsáveis pela quitação das transações fechadas durante os leilões.
-- Cada leilão deve ter ao menos uma entidade financeira associada (CNPJ).
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Entidade_financeira.jpeg" alt="BD" />
 
+3) Ao cadastrar leilões, deve-se definir uma data futura para a realização do evento e vincular uma entidade financeira previamente registrada.
+
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Leilao.jpeg" alt="BD" />
+
+4) Em seguida, é necessario cadastrar os usuários que irão participar do sistema, fazendo lances em veículos e dispositivos de informática.
+
+   <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/usuario.jpeg" alt="BD" />
+
+
+5) No caso dos veículos a serem leiloados, eles devem ser cadastrados com a referência a um leilão existente, cuja data de realização ainda não tenha ocorrido, além de associar um tipo de veículo válido (1-Carros, 2-Motos, 3-Caminhões, 4-Utilitários).
+
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Veiculos.jpeg" alt="BD" />
+
+6) Da mesma forma, os dispositivos de informática disponibilizados para leilão devem ser vinculados a um leilão existente com data futura e a um tipo de dispositivo de informática válido (1-Notebooks, 2-Monitores, 3-Hubs, 4-Switches, 5-Roteadores).
+
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/dispositivo_informatia.jpeg" alt="BD" />
+
+7) Para finalizar, o registro dos lances dos usuários em veículos, deve-se informar um veículo válido e o CPF de um cliente previamente cadastrado.
+
+<img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_vei.jpeg" alt="BD" />
+
+8) No caso de lances em dispositivos de informática, é necessário fornecer o ID do dispositivo e o CPF de um cliente já registrado no sistema.
+
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_dis.jpeg" alt="BD" />  
