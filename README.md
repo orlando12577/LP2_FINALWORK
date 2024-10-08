@@ -116,6 +116,7 @@ O sistema deve contemplar as seguintes funcionalidades:
 - Registro, consulta, atualização e remoção dos dispositivos de informática a serem leiloados.
   
 - Os detalhes dos dados para representar esses dispositivos fazem parte da pesquisa sobre o domínio do sistema.
+  
 
 2) Gestão de Veículos:
 
