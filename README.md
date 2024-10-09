@@ -54,11 +54,7 @@ mvn -version
 ```bash
  cd lp2_finalwork
 ```
-   ### Instale as Dependencias:
 
-```bash
-mvn install 
-```
    ### Para rodar a Aplicação:
 
 ```bash
