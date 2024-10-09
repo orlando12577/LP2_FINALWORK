@@ -49,7 +49,7 @@ mvn -version
 
 3) Após a abertura do Projeto e instalação das extenções,execute os seguintes comandos:
 
-  ### Para rodar a aplicação:
+  ### Para leitura da aplicação:
    
 ```bash
  cd lp2_finalwork
