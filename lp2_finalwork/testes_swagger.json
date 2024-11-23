@@ -1,17 +1,15 @@
-
-
 {
   "entfinId": 1, 
   "entfinNome": "BANCO DO BRASIL" 
 }
 
 {
-  "leiDataOcorrencia": "2024-10-06T00:35:01.076Z",
-  "leiDataVisitacao": "2024-10-06T00:35:01.076Z",  //sempre lembrar de alterar as datas 
-  "leiEndereco": "rua joão ninguem,67",
-  "leiCidade": "Jacareí",
+  "leiDataOcorrencia": "2024-10-08T19:16:04.947Z",
+  "leiDataVisitacao": "2024-10-08T19:16:04.947Z",
+  "leiEndereco": "RUA JOÃO NINGUEM",
+  "leiCidade": "234",
   "leiestado": "São Paulo",
-  "leiEnderecoWeb": "www.leilaos.com.br",
+  "leiEnderecoWeb": "www.leilaoeletronico.com.br",
   "idEntidadesFinanceiras": [
     1
   ]
@@ -20,20 +18,22 @@
 
 {
   "cliCpf": "46406975898",
-  "cliNome": "Orlando Seixas",
+  "cliNome": "ORLANDO SEIXAS",
   "cliEmail": "seixasorlando25@gmail.com"
 }
 
 
+
+
 {
-  "veiPlaca": "LP2024",
-  "veiMarca": "CHEVORLET",
-  "veiAnoFabricacao": 2018,
-  "veiDistanciaRodada": 20000,
-  "veiCambio": "Automatico",
+  "veiPlaca": "CMD23445",
+  "veiMarca": "FIAT",
+  "veiAnoFabricacao": 2020,
+  "veiDistanciaRodada": 30000,
+  "veiCambio": "Manual",
   "veiCombustivel": "Gasolina",
-  "veiCor": "preta",
-  "veiPeso": 3000,
+  "veiCor": "Preto",
+  "veiPeso": 300,
   "tipoVeiculo": 1,
   "leilao": 1
 }
@@ -42,24 +42,24 @@
 {
   "veiculo": 1,
   "cpfCliente": "46406975898",
-  "valorLance": 30000
+  "valorLance": 100000
 }
 
 {
-  "diEnderecoFisico": "DM2345",
-  "diMarca": "SANSUNG",
-  "diProcessador": "INTEL",
+  "diEnderecoFisico": "BMD1245",
+  "diMarca": "Acer",
+  "diProcessador": "I5",
   "diTela": "LED",
-  "diArmazenamento": SSD,
-  "diMemoria": 1TB,
+  "diArmazenamento": 500,
+  "diMemoria": 16,
   "diTensao": 220,
-  "diNumeroPortas": 4,
+  "diNumeroPortas": 6,
   "tipoDi": 1,
   "leilao": 1
 }
 
 {
-  "valor": 2000,
-  "cpfCliente": "46406975898",
+  "valor": 30000,
+  "cpfCliente": 46406975898,
   "dispositivoInformatica": 1
 }
