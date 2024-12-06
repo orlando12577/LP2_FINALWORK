@@ -60,6 +60,7 @@ mvn -version
 ```bash
 mvn spring-boot:run
 ```
+
 # Sobre o projeto LP2 Final Work: 
 
 Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos, desenvolvido como trabalho final de Programação Orientada a Objetos. Para executá-lo e testar suas funcionalidades, siga as etapas abaixo:
@@ -105,7 +106,7 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 
 
 
-### Funcionalidades da aplicação com a inserção dos testes : 
+### Sequencia de tarefas da aplicação com a inserção dos testes : 
 
 1) Inicialmente, os tipos de dispositivos de informática e veículos serão automaticamente inseridos no sistema.
 
@@ -140,3 +141,10 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 8) No caso de lances em dispositivos de informática, é necessário fornecer o ID do dispositivo e o CPF de um cliente já registrado no sistema.
 
  <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_dis.jpeg" alt="BD" />  
+
+
+
+## Representação de Fluxo de Dados e Entidades:
+
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Representação de Fluxo de Dados e Entidades.jpeg" alt="BD" />  
+
