@@ -144,7 +144,3 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 
 
 
-## Representação de Fluxo de Dados e Entidades:
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Representação de Fluxo de Dados e Entidades.jpeg" alt="BD" />  
-
