@@ -52,7 +52,7 @@ mvn -version
   ### Para leitura da aplicação:
    
 ```bash
- cd lp2_finalwork
+ cd leilao
 ```
 
    ### Para rodar a Aplicação:
@@ -104,39 +104,3 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 
 
 
-
-### Funcionalidades da aplicação com a inserção dos testes : 
-
-1) Inicialmente, os tipos de dispositivos de informática e veículos serão automaticamente inseridos no sistema.
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/BD.jpeg" alt="BD" />
-
-
- 2) Após isso,cadastre as entidades financeiras que serão utilizadas nos cadastros dos leilões
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Entidade_financeira.jpeg" alt="BD" />
-
-3) Ao cadastrar leilões, deve-se definir uma data futura para a realização do evento e vincular uma entidade financeira previamente registrada.
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Leilao.jpeg" alt="BD" />
-
-4) Em seguida, é necessario cadastrar os usuários que irão participar do sistema, fazendo lances em veículos e dispositivos de informática.
-
-   <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/usuario.jpeg" alt="BD" />
-
-
-5) No caso dos veículos a serem leiloados, eles devem ser cadastrados com a referência a um leilão existente, cuja data de realização ainda não tenha ocorrido, além de associar um tipo de veículo válido (1-Carros, 2-Motos, 3-Caminhões, 4-Utilitários).
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Veiculos.jpeg" alt="BD" />
-
-6) Da mesma forma, os dispositivos de informática disponibilizados para leilão devem ser vinculados a um leilão existente com data futura e a um tipo de dispositivo de informática válido (1-Notebooks, 2-Monitores, 3-Hubs, 4-Switches, 5-Roteadores).
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/dispositivo_informatia.jpeg" alt="BD" />
-
-7) Para finalizar, o registro dos lances dos usuários em veículos, deve-se informar um veículo válido e o CPF de um cliente previamente cadastrado.
-
-<img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_vei.jpeg" alt="BD" />
-
-8) No caso de lances em dispositivos de informática, é necessário fornecer o ID do dispositivo e o CPF de um cliente já registrado no sistema.
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_dis.jpeg" alt="BD" />  
