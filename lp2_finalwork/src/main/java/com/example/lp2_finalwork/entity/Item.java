@@ -1,4 +1,4 @@
-package br.gov.fazenda.receita.leilao.entity;
+package com.example.lp2_finalwork.entity;
 
 import java.util.ArrayList;
 import java.util.List;

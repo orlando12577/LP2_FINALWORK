@@ -1,4 +1,4 @@
-package com.example.lp2_finalwork.Controller;
+package com.example.lp2_finalwork.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.lp2_finalwork.Repository.FinanceiraRepository;
-import com.example.lp2_finalwork.Service.FinanceiraService;
 import com.example.lp2_finalwork.entity.Financeira;
+
 
 @Service
 public class FinanceiraServiceImpl implements FinanceiraService{

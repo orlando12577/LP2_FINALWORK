@@ -1,10 +1,11 @@
-package br.gov.fazenda.receita.leilao.entity;
+package com.example.lp2_finalwork.entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-import br.gov.fazenda.receita.leilao.entity.status.LeilaoStatus;
+import com.example.lp2_finalwork.entity.status.LeilaoStatus;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -19,6 +20,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+
 
 @Entity
 @Table(name = "lei_leilao")
