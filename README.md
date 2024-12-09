@@ -55,6 +55,10 @@ mvn -version
  cd leilao
 ```
 
+```bash
+ cd leilao-main
+```
+
    ### Para rodar a Aplicação:
 
 ```bash
@@ -103,4 +107,58 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 - Veículos: carros e motocicletas de passeio, caminhões e utilitários apreendidos.
 
 
+### Sequencia de tarefas da aplicação com a inserção dos testes : 
 
+1) Inserindo Informações no Banco de Dados: 
+
+- Insira as informações necessárias que você deseja visualizar no banco de dados, conforme especificado na aplicação.
+- Certifique-se de preencher todos os campos corretamente.
+
+2) Iniciando a Aplicação:
+
+- Após conferir as informações inseridas, inicie a aplicação. O banco de dados irá armazenar todas as informações do sistema automaticamente.
+
+ Veja o exemplo da estrutura do banco de dados:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Banco_Dados.jpeg" alt="BD" />
+
+3) Visualizando Usuários no Sistema
+
+Após a inicialização, você poderá visualizar os usuários registrados no sistema.
+
+Exemplo de visualização de usuários:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/usuario.jpeg" alt="BD" />
+
+4)Gerenciamento de Leilões
+
+- É possível visualizar os leilões em aberto, criar novos leilões, atualizá-los e excluí-los conforme necessário.
+
+- Exemplo de gerenciamento de leilões:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Leilao.jpeg" alt="BD" />
+
+5) Gerenciamento de Itens
+
+- Visualize os itens relacionados aos leilões, incluindo detalhes sobre os lances dados, descrições detalhadas e opções para criar, atualizar e excluir itens.
+
+- Exemplo de gerenciamento de itens:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Item.jpeg" alt="BD" />
+
+
+6) Visualizando Entidades Financeiras:
+
+- É possível visualizar as entidades financeiras disponíveis no sistema.
+
+- Exemplo de visualização das entidades financeiras:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Financeira.jpeg" alt="BD" />
+
+7) Consulta de Endereço por ID:
+
+- Caso tenha dúvidas sobre endereços, utilize a opção de buscar por ID no sistema.
+
+- Exemplo de consulta de endereço:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Endereço.jpeg" alt="BD" />
