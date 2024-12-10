@@ -52,7 +52,11 @@ mvn -version
   ### Para leitura da aplicação:
    
 ```bash
- cd lp2_finalwork
+ cd leilao
+```
+
+```bash
+ cd leilao-main
 ```
 
    ### Para rodar a Aplicação:
@@ -60,7 +64,6 @@ mvn -version
 ```bash
 mvn spring-boot:run
 ```
-
 # Sobre o projeto LP2 Final Work: 
 
 Projeto Lp2FinalworkApplication faz parte de um sistema de leilões eletrônicos, desenvolvido como trabalho final de Programação Orientada a Objetos. Para executá-lo e testar suas funcionalidades, siga as etapas abaixo:
@@ -104,41 +107,102 @@ O novo sistema visa direcionar o escopo inicial para leilões específicos de:
 - Veículos: carros e motocicletas de passeio, caminhões e utilitários apreendidos.
 
 
+## Funcionalidade da Configuração e Teste da Aplicação com H2 e Swagger:
+
+
+Tutorial de Configuração e Teste da Aplicação com H2 e Swagger
+1. Configuração do Banco de Dados H2
+- A aplicação utiliza o H2, um banco de dados em memória RAM.
+- A configuração do H2 está no arquivo application.properties. Ao iniciar a aplicação, ele vai ler todas as entidades e criar as tabelas no banco de dados automaticamente.
+
+2. Dados Iniciais (data.sql)
+O arquivo data.sql contém os dados iniciais para popular o banco.
+A sequência sugerida para inserção é:
+1) Usuários: Crie os usuários primeiro.
+2) Endereços: Após os usuários, crie os endereços e relacione-os com os IDs dos usuários.
+3) Financeiras: Insira os dados das entidades financeiras.
+4) Leilões e Produtos: Crie os leilões e associe os produtos aos leilões.
+
+3. Execução do data.sql
+- Após configurar e iniciar a aplicação, execute o data.sql para inserir os dados iniciais.
+- Isso permite que você teste a aplicação com informações pré-carregadas.
+
+4. Acessando o Banco H2
+- Para consultar os dados no H2, acesse a interface web do banco em :
+  
+```bash
+  http://localhost:8080/h2/
+```
+
+As configurações de login estão definidas no application.properties.
+
+
+5. Utilizando o Swagger
+- Para inserir ou consultar dados pela API, utilize o Swagger. Acesse:
+
+
+Ordem sugerida para inserções via Swagger:
+Crie um usuário.
+Crie um endereço e relacione-o com o ID do usuário.
+Insira as financeiras.
+Adicione leilões e produtos associados.
+
+
+
+6. Testando e Modificando os Dados
+- Após rodar o data.sql, você pode fazer alterações ou novas inserções tanto pelo H2 Console quanto pelo Swagger.
+- Se preferir não rodar o data.sql, você pode inserir os dados diretamente via Swagger seguindo a ordem indicada.
 
 
 ### Sequencia de tarefas da aplicação com a inserção dos testes : 
 
-1) Inicialmente, os tipos de dispositivos de informática e veículos serão automaticamente inseridos no sistema.
+1) Inserindo Informações no Banco de Dados: 
 
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/BD.jpeg" alt="BD" />
+- Insira as informações necessárias que você deseja visualizar no banco de dados, conforme especificado na aplicação.
+- Certifique-se de preencher todos os campos corretamente.
+
+2) Iniciando a Aplicação:
+
+- Após conferir as informações inseridas, inicie a aplicação. O banco de dados irá armazenar todas as informações do sistema automaticamente.
+
+ Veja o exemplo da estrutura do banco de dados:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Banco_Dados.jpeg" alt="BD" />
+
+3) Visualizando Usuários no Sistema
+
+Após a inicialização, você poderá visualizar os usuários registrados no sistema.
+
+Exemplo de visualização de usuários:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/usuario.jpeg" alt="BD" />
+
+4)Gerenciamento de Leilões
+
+- É possível visualizar os leilões em aberto, criar novos leilões, atualizá-los e excluí-los conforme necessário.
+
+- Exemplo de gerenciamento de leilões:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Leilao.jpeg" alt="BD" />
+
+5) Gerenciamento de Itens
+
+- Visualize os itens relacionados aos leilões, incluindo detalhes sobre os lances dados, descrições detalhadas e opções para criar, atualizar e excluir itens.
+
+- Exemplo de gerenciamento de itens:
+
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Item.jpeg" alt="BD" />
 
 
- 2) Após isso,cadastre as entidades financeiras que serão utilizadas nos cadastros dos leilões
+6) Visualizando Entidades Financeiras:
 
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Entidade_financeira.jpeg" alt="BD" />
+- É possível visualizar as entidades financeiras disponíveis no sistema.
 
-3) Ao cadastrar leilões, deve-se definir uma data futura para a realização do evento e vincular uma entidade financeira previamente registrada.
+- Exemplo de visualização das entidades financeiras:
 
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Leilao.jpeg" alt="BD" />
+ <img src="https://github.com/orlando12577/Leilao/blob/Corre%C3%A7%C3%B5es/Arquivos/Financeira.jpeg" alt="BD" />
 
-4) Em seguida, é necessario cadastrar os usuários que irão participar do sistema, fazendo lances em veículos e dispositivos de informática.
-
-   <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/usuario.jpeg" alt="BD" />
-
-
-5) No caso dos veículos a serem leiloados, eles devem ser cadastrados com a referência a um leilão existente, cuja data de realização ainda não tenha ocorrido, além de associar um tipo de veículo válido (1-Carros, 2-Motos, 3-Caminhões, 4-Utilitários).
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Veiculos.jpeg" alt="BD" />
-
-6) Da mesma forma, os dispositivos de informática disponibilizados para leilão devem ser vinculados a um leilão existente com data futura e a um tipo de dispositivo de informática válido (1-Notebooks, 2-Monitores, 3-Hubs, 4-Switches, 5-Roteadores).
-
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/dispositivo_informatia.jpeg" alt="BD" />
-
-7) Para finalizar, o registro dos lances dos usuários em veículos, deve-se informar um veículo válido e o CPF de um cliente previamente cadastrado.
-
-<img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_vei.jpeg" alt="BD" />
-
-8) No caso de lances em dispositivos de informática, é necessário fornecer o ID do dispositivo e o CPF de um cliente já registrado no sistema.
+7) Consulta de Endereço por ID:
 
  <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_dis.jpeg" alt="BD" />  
 
