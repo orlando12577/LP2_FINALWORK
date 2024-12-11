@@ -208,7 +208,7 @@ Exemplo de visualização de usuários:
 
 8) Busca pelos lances realizados na aplcação: 
 
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Lance.jpeg" alt="BD" />  
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lance.jpeg" alt="BD" />  
 
  
 
