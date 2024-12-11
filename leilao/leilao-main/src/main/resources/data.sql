@@ -35,13 +35,18 @@ VALUES ('NOTEBOOK', 'Notebook', 1300.00, 1);
 INSERT INTO itm_item (tipo_item, itm_nome, vei_marca, vei_modelo, itm_valor_inicial, itm_lei_id)
 VALUES ('CARRO', 'Corsa', 'GM', '96/97', 9000.00, 1);
 
--- Lance de 1500 no item com id 1 e usuário com id 1
-INSERT INTO lan_lance (lan_valor, lan_data_hora, lan_itm_id, lan_usr_id)
-VALUES (1500.00, '2024-12-10 14:30:00', 1, 1);
+-- Lance com ID 1: R$ 2000,00 no item com id 1 pelo usuário com id 1 em uma data específica
+INSERT INTO lan_lance (lan_id, lan_valor, lan_data_hora, lan_itm_id, lan_usr_id)
+VALUES (1, 2000.00, '2024-12-12 10:15:00', 1, 1);
 
--- Lance de 9500 no item com id 2 e usuário com id 2
-INSERT INTO lan_lance (lan_valor, lan_data_hora, lan_itm_id, lan_usr_id)
-VALUES (9500.00, '2024-12-10 14:30:00', 2, 2);
+-- Lance com ID 2: R$ 3000,00 no item com id 2 pelo usuário com id 2
+INSERT INTO lan_lance (lan_id, lan_valor, lan_data_hora, lan_itm_id, lan_usr_id)
+VALUES (2, 3000.00, '2024-12-12 11:30:00', 2, 2);
 
+-- Lance com ID 3: R$ 2500,00 no item com id 1 pelo usuário com id 2
+INSERT INTO lan_lance (lan_id, lan_valor, lan_data_hora, lan_itm_id, lan_usr_id)
+VALUES (3, 2500.00, '2024-12-13 09:45:00', 1, 2);
 
-
+-- Lance com ID 4: R$ 10000,00 no item com id 2 pelo usuário com id 1
+INSERT INTO lan_lance (lan_id, lan_valor, lan_data_hora, lan_itm_id, lan_usr_id)
+VALUES (4, 10000.00, '2024-12-13 15:20:00', 2, 1);

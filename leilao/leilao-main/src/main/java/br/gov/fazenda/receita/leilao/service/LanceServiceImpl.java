@@ -1,13 +1,9 @@
 package br.gov.fazenda.receita.leilao.service;
 
-
-
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.gov.fazenda.receita.leilao.entity.Lance;
 import br.gov.fazenda.receita.leilao.repository.LanceRepository;
 
@@ -19,11 +15,8 @@ public class LanceServiceImpl implements LanceService {
 
     @Override
     public Lance buscarLancePorId(Long id) {
-        Optional<Lance> lanceOp = lanceRepo.findById(id);
-        if (lanceOp.isEmpty()) {
-            throw new IllegalArgumentException("Lance não encontrado!");
-        }
-        return lanceOp.get();
+        return lanceRepo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Lance não encontrado!"));
     }
 
     @Override
@@ -35,23 +28,18 @@ public class LanceServiceImpl implements LanceService {
     }
 
     @Override
-    public Lance atualizarLance(Lance lance) {
-        return lanceRepo.save(lance);
+    public Lance atualizarLance(Long id, Lance lance) {
+        Lance existente = buscarLancePorId(id);
+        existente.setValorLance(lance.getValorLance());
+        existente.setItem(lance.getItem());
+        existente.setUsuario(lance.getUsuario());
+        return lanceRepo.save(existente);
     }
 
     @Override
     public void excluirLance(Long id) {
+        buscarLancePorId(id);
         lanceRepo.deleteById(id);
-    }
-
-    @Override
-    public List<Lance> buscarLancesPorItem(Long itemId) {
-        return lanceRepo.findByItemId(itemId);
-    }
-
-    @Override
-    public List<Lance> buscarLancesPorUsuario(Long usuarioId) {
-        return lanceRepo.findByUsuarioId(usuarioId);
     }
 
     @Override
