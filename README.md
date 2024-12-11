@@ -204,7 +204,11 @@ Exemplo de visualização de usuários:
 
 7) Consulta de Endereço por ID:
 
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lei_dis.jpeg" alt="BD" />  
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Endereço.jpeg" alt="BD" />  
 
+8) Busca pelos lances realizados na aplcação: 
 
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/Lance.jpeg" alt="BD" />  
+
+ 
 
