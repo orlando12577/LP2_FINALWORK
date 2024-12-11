@@ -11,7 +11,7 @@ Este projeto é um sistema de Leilão Eletrônico desenvolvido em Java utilizand
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original-wordmark.svg" alt="Java" width="100" height="100"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original-wordmark.svg" alt="Spring Boot" width="100" height="100"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/hibernate/hibernate-plain-wordmark.svg" alt="Hibernate" width="100" height="100"/>
- <img src="https://github.com/orlando12577/LP2_FINALWORK/raw/main/Arquivos/lombok.png" alt="Lombok" width="100" height="100"/>
+ <img src="https://github.com/orlando12577/LP2_FINALWORK/blob/feature-2/Arquivos/lombok.png" alt="Lombok" width="100" height="100"/>
   <img src="https://raw.githubusercontent.com/swagger-api/swagger-ui/master/dist/favicon-32x32.png" alt="Swagger" width="100" height="100"/>
 </p>
 
